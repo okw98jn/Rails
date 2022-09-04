@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.7.3
+      - image: cimg/ruby:2.7.3
     working_directory: ~/My-Food-Diary/src
     steps:
       - checkout:
@@ -15,7 +15,7 @@ jobs:
 
   rspec:
     docker:
-      - image: circleci/ruby:2.7.3
+      - image: cimg/ruby:2.7.3
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -40,7 +40,7 @@ jobs:
 
   # deploy:
   #   docker:
-  #     - image: circleci/ruby:2.7
+  #     - image: cimg/ruby:2.7.3
   #   steps:
   #     - checkout
   #     - setup_remote_docker:
