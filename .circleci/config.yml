@@ -13,6 +13,18 @@ jobs:
           path: ~/My-Food-Diary
       - ruby/install-deps
 
+  rubocop:
+    docker:
+      - image: cimg/ruby:2.7.3
+    working_directory: ~/My-Food-Diary/src
+    steps:
+      - checkout:
+          path: ~/My-Food-Diary
+      - ruby/install-deps
+      - run:
+          name: rubocop
+          command: bundle exec rubocop --require rubocop-airbnb
+
   rspec:
     docker:
       - image: cimg/ruby:2.7.3
@@ -61,12 +73,15 @@ jobs:
 
 workflows:
   version: 2
-  build_rspec:
+  build_rubocop_rspec:
     jobs:
       - build
-      - rspec:
+      - rubocop:
           requires:
             - build
+      - rspec:
+          requires:
+            - rubocop
       # - deploy:
       #     requires:
       #       - test
