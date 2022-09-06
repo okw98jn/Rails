@@ -1,0 +1,16 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+Layout/LineLength:
+  Max: 170
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "db/**/*"
+    - "bin/*"
+    - "vendor/**/*"
+    - "config/environments/*"
+    - "config/initializers/*"
+    - "config/spring.rb"
+    - "Gemfile"

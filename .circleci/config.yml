@@ -1,0 +1,87 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@1.1.2
+  heroku: circleci/heroku@1.2.3
+
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:2.7.3
+    working_directory: ~/My-Food-Diary/src
+    steps:
+      - checkout:
+          path: ~/My-Food-Diary
+      - ruby/install-deps
+
+  rubocop:
+    docker:
+      - image: cimg/ruby:2.7.3
+    working_directory: ~/My-Food-Diary/src
+    steps:
+      - checkout:
+          path: ~/My-Food-Diary
+      - ruby/install-deps
+      - run:
+          name: rubocop
+          command: bundle exec rubocop --require rubocop-airbnb
+
+  rspec:
+    docker:
+      - image: cimg/ruby:2.7.3
+      - image: circleci/mysql:5.5
+        environment:
+          MYSQL_ROOT_PASSWORD: password
+          MYSQL_DATABASE: app_test
+          MYSQL_USER: root
+    environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
+      APP_DATABASE_HOST: "127.0.0.1"
+      RAILS_ENV: test
+    working_directory: ~/My-Food-Diary/src
+    steps:
+      - checkout:
+          path: ~/My-Food-Diary
+      - ruby/install-deps
+      - run:
+          name: Database setup
+          command: bundle exec rails db:migrate
+      - run:
+          name: rspec
+          command: bundle exec rspec
+
+  deploy:
+    docker:
+      - image: cimg/ruby:2.7.3
+    steps:
+      - checkout
+      - setup_remote_docker:
+          version: 19.03.13
+      - heroku/install
+      - run:
+          name: heroku login
+          command: heroku container:login
+      - run:
+          name: push docker image
+          command: heroku container:push web -a $HEROKU_APP_NAME
+      - run:
+          name: release docker image
+          command: heroku container:release web -a $HEROKU_APP_NAME
+      - run:
+          name: database setup
+          command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
+
+workflows:
+  version: 2
+  build_rubocop_rspec_and_deploy:
+    jobs:
+      - build
+      - rubocop:
+          requires:
+            - build
+      - rspec:
+          requires:
+            - rubocop
+      - deploy:
+          requires:
+            - rspec
