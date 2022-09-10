@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Sawarabi+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+body{
+  background-color:#f3f3f3 !important;
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
