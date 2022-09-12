@@ -1,10 +1,10 @@
 .form_sub_title{
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 166, 0, 0.8);
   letter-spacing: 6px;
 }
 .form_title{
-  color: rgba(255, 255, 255, 0.548);
+  color: rgba(255, 166, 0, 0.8);
   font-size: 32px;
   letter-spacing: 6px;
   font-weight: bold;
@@ -17,10 +17,10 @@
   margin-bottom: 15px;
 }
 .input_field{
-  border-radius: 3px;
+  border-radius: 10px;
   padding: 10px 15px;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 153, 0, 0.6);
   color: white;
   text-align: center;
   width: 50%;
@@ -29,7 +29,7 @@
   outline: 0;
   transition-duration: 0.4s;
     &:hover{
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 153, 0, 0.9);
       cursor: pointer;
     }
     &:focus{
@@ -44,26 +44,30 @@
 .form_btn{
   width: 25%;
   padding: 12px 16px;
-  border: 2px solid rgb(253, 232, 208);
-  border-radius: 3px;
+  border: 2px solid rgba(227, 148, 59, 0.741);
+  border-radius: 5px;
   background-color: transparent;
-  color: white;
+  color: rgb(255, 166, 0);
     &:hover{
       transition: all 0.4s;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 161, 39, 0.582);
+      color: rgb(255, 255, 255);
     }
 }
 .sign_up_link{
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(41, 41, 41, 0.7);
   letter-spacing: 1px;
+  display: block;
+  margin-bottom: 5px;
     &:hover{
-      color:white;
+      color:rgb(248, 180, 84);
+      transition: all 0.8s;
       opacity: 0.7;
     }
 }
 /* 背景 */
 .area{
-  background: #ff731cc0;
+  background: #efecec;
   width: 100%;
   height:100vh;
 }
@@ -82,7 +86,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 149, 0, 0.6);
   animation: animate 25s linear infinite;
   bottom: -150px; 
 }
