@@ -61,7 +61,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "app_production"
-  config.action_mailer.default_url_options = { host: 'example.com'}
+  config.action_mailer.default_url_options = { host: 'https://myfood-diary.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = true
 
