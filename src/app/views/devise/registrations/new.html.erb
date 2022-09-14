@@ -17,9 +17,9 @@
       <div class="field">
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "input_field" %>
       </div>
-      <div class="flex mb-4">
+      <div class="mb-4">
         <%= f.submit "登録", class: "form_btn" %>
-        <%= f.submit "ゲストログイン", class: "form_btn" %>
+        <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "form_btn d-inline-block" %>
       </div>
     <% end %>
     <%= link_to "アカウントをお持ちの方はこちら", new_user_session_path, class: "sign_up_link" %>
