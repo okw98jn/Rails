@@ -20,4 +20,15 @@ body{
   background-color:#f3f3f3 !important;
   font-family: 'Source Sans Pro', sans-serif !important;
 }
-
+a{
+  text-decoration: none !important;
+}
+li{
+  list-style: none;
+}
+.error_alert{
+  text-align: center;
+  padding: 6px;
+  color: #a94442de;
+  font-size: 15px;
+}
