@@ -1,6 +1,6 @@
 <% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
+  <div class="alert alert-success mb-0"><i class="fa-solid fa-check "></i><%= flash[:notice] %></div>
 <% end %>
 <% if flash[:alert] %>
-  <p><%= flash[:alert] %></p>
+  <div class="alert alert-danger mb-0"><i class="fa-solid fa-triangle-exclamation"></i><%= flash[:alert] %></div>
 <% end %>
