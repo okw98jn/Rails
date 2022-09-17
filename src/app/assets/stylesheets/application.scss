@@ -13,22 +13,50 @@
  *= require_tree .
  *= require_self
  */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Sawarabi+Gothic&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
-body{
-  background-color:#f3f3f3 !important;
-  font-family: 'Source Sans Pro', sans-serif !important;
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+body {
+  background-color: #f3f3f3 !important;
 }
-a{
+a {
   text-decoration: none !important;
 }
-li{
+li {
   list-style: none;
 }
-.error_alert{
+.error_alert {
   text-align: center;
   padding: 6px;
   color: #a94442de;
   font-size: 15px;
+}
+header {
+  padding: 15px 40px;
+  background-color: rgba(75, 75, 75, 0.355);
+}
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app_name {
+  font-size: 30px;
+  color: rgb(255, 215, 152);
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+  &:hover {
+    color: rgba(255, 216, 152, 0.828);
+  }
+}
+.header_right {
+  display: flex;
+}
+.menu_item {
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.icon_color {
+  color: rgb(255, 215, 152);
 }
