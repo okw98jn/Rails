@@ -6,18 +6,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%# 本番環境でbootstrapを適用するため %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="header bg-black p-4">
-      <% if user_signed_in? %>
-        <p class=" bg-white"><%= current_user.name %></p>
-      <% end %>
-    </div>
+    <%= render "shared/header" %>
     <%= render "shared/flash_message" %>
     <%= yield %>
-    <div class="footer bg-black p-4">
-    </div>
   </body>
 </html>
