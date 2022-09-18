@@ -8,6 +8,11 @@
     <div class="header_right">
       <% if user_signed_in? %>
         <div class="menu_item">
+          <%= link_to user_path(current_user.id) do%>
+            <i class="fa-solid fa-user fa-2x icon_color"></i>
+          <% end %>
+        </div>
+        <div class="menu_item">
           <%= link_to destroy_user_session_path, method: :delete do%>
             <i class="fa-solid fa-right-to-bracket fa-2x icon_color"></i>
           <% end %>
