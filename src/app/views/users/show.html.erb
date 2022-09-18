@@ -1,0 +1,22 @@
+<% provide(:title, "マイページ") %>
+<div class="container-fluid position-absolute z-2">
+  <div class="user col-lg-8 mx-auto">
+    <div class="user_image">
+      <%= image_tag 'default_user.jpeg' %>
+    </div>
+    <h2 class="user_name"><%= @user.name %></h2>
+    <div class="follows_link">
+      <%= link_to "フォロー", "/" %>
+      <%= link_to "フォロワー", "/" %>
+    </div>
+    <div class="user_link_btn">
+      <%= link_to "/" do%>
+        <i class="fa-solid fa-plus"></i>作成
+      <% end %>
+      <%= link_to "/" do%>
+        <i class="fa-solid fa-user-pen"></i>編集
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/animated_background" %>

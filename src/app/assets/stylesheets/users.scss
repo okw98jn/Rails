@@ -167,3 +167,53 @@
     border-radius: 50%;
   }
 }
+/* マイページ */
+.user{
+  text-align: center;
+  margin-top: 100px;
+}
+.user_image img{
+  display: block;
+  width: 100px;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.user_name{
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.follows_link{
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.follows_link a{
+  margin-right: 15px;
+  color: grey;
+  &:last-child{
+    margin-right: 0;
+  }
+}
+.user_link_btn a{
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  height: 40px;
+  padding: 7px 40px;
+  margin: 0 20px;
+  color: grey;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 10px;
+  &:hover{
+    color: rgb(173, 171, 171);
+    background-color: rgba(254, 185, 73, 0.4);
+    transition: 0.8s;
+  }
+}
