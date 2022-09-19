@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable
 
+  # ゲストユーザーメソッド
   def self.guest
     find_or_create_by!(email: 'aaa@aaa.com') do |user|
       user.password = SecureRandom.urlsafe_base64
@@ -12,6 +13,7 @@ class User < ApplicationRecord
     end
   end
 
+  # パスワード無しで編集できるようにするメソッド
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
