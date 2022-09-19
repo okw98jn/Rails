@@ -217,3 +217,17 @@
     transition: 0.8s;
   }
 }
+/* 編集ページ */
+.file_input{
+  display: none;
+}
+.file_field{
+  cursor: pointer;
+  margin-top: 30px;
+  img{
+    margin-bottom: 0px;
+  }
+}
+.file_field img:hover{
+  opacity: 0.7;
+}
