@@ -5,4 +5,8 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   resources :users, only: [:show]
+  # 退会ページ
+  get '/users/:id/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe'
+  # 退会処理
+  patch '/users/:id/withdrawal', to: 'users#withdrawal', as: 'withdrawal'
 end

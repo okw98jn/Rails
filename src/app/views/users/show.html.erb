@@ -9,7 +9,7 @@
       <%= link_to "フォロー", "/" %>
       <%= link_to "フォロワー", "/" %>
     </div>
-    <div class="user_link_btn">
+    <div class="user_link_btn mb-3">
       <%= link_to "/" do%>
         <i class="fa-solid fa-plus"></i>作成
       <% end %>
@@ -17,6 +17,9 @@
         <i class="fa-solid fa-user-pen"></i>編集
       <% end %>
     </div>
+    <%= link_to unsubscribe_path, class: "unsubscribe_link" do%>
+      <i class="fa-solid fa-user-slash"></i>退会する
+    <% end %>
   </div>
 </div>
 <%= render "shared/animated_background" %>
