@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # ゲストユーザーは編集できない
   def ensure_normal_user
     if resource.email == 'aaa@aaa.com'
-      redirect_to root_path, alert: 'ゲストユーザーは編集できません。'
+      redirect_to user_path(@user.id), alert: 'ゲストユーザーは編集できません。'
     end
   end
 end
