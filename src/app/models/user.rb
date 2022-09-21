@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable
 
+  mount_uploader :user_image, ImageUploader
+
   # ゲストユーザーメソッド
   def self.guest
     find_or_create_by!(email: 'aaa@aaa.com') do |user|
