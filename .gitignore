@@ -29,6 +29,7 @@ src/.byebug_history
 src/config/master.key
 
 src/public/packs
+src/public/uploads
 src/public/packs-test
 src/node_modules
 src/yarn-error.log
