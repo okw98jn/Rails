@@ -1,0 +1,28 @@
+<% provide(:title, "ログイン") %>
+<div class="container-fluid text-center position-absolute">
+  <div class="form_area col-lg-7 mx-auto mt-3 p-5 position-relative ">
+    <%= image_tag 'sign_in_icon.png', class: "mb-3", size: '70' %>
+    <h2 class="mb-2 form_title">SIGN-IN</h2>
+    <h3 class="mb-4 form_sub_title">ログイン</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "input_field" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "input_field" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "input_field" %>
+    </div>
+    <div class="mb-4">
+      <%= f.submit "ログイン", class: "form_btn" %>
+      <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "form_btn d-inline-block" %>
+    </div>
+    <%= link_to "アカウントをお持ちでない方はこちら", new_user_registration_path, class: "sign_up_link" %>
+    <%= link_to "パスワードが分からない方はこちら", new_user_password_path, class: "sign_up_link" %>
+    <% end %>
+  </div>
+</div>
+<%# 背景の読み込み %>
+<%= render "shared/animated_background" %>

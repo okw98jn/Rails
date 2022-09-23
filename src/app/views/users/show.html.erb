@@ -1,0 +1,25 @@
+<% provide(:title, "マイページ") %>
+<div class="container-fluid position-absolute z-2">
+  <div class="user col-lg-8 mx-auto">
+    <div class="user_image">
+      <%= render "shared/user_image", user: @user %>
+    </div>
+    <h2 class="user_name"><%= @user.name %></h2>
+    <div class="follows_link">
+      <%= link_to "フォロー", "/" %>
+      <%= link_to "フォロワー", "/" %>
+    </div>
+    <div class="user_link_btn mb-3">
+      <%= link_to "/" do%>
+        <i class="fa-solid fa-plus"></i>作成
+      <% end %>
+      <%= link_to edit_user_registration_path do%>
+        <i class="fa-solid fa-user-pen"></i>編集
+      <% end %>
+    </div>
+    <%= link_to unsubscribe_path, class: "unsubscribe_link" do%>
+      <i class="fa-solid fa-user-slash"></i>退会する
+    <% end %>
+  </div>
+</div>
+<%= render "shared/animated_background" %>

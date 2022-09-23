@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+body {
+  background-color: #f3f3f3 !important;
+}
+a {
+  text-decoration: none !important;
+}
+li {
+  list-style: none;
+}
+.z-2{
+  z-index: 2;
+}
+.error_alert {
+  text-align: center;
+  padding: 6px;
+  color: #a94442de;
+  font-size: 15px;
+}
+header {
+  padding: 15px 40px;
+  background-color: rgba(75, 75, 75, 0.355);
+}
+.header_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.app_name {
+  font-size: 30px;
+  color: rgb(255, 215, 152);
+  font-family: "Fredericka the Great", cursive;
+  font-weight: bold;
+  &:hover {
+    color: rgba(255, 216, 152, 0.828);
+  }
+}
+.header_right {
+  display: flex;
+}
+.menu_item {
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.icon_color {
+  color: rgb(255, 215, 152);
+}

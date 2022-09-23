@@ -1,0 +1,6 @@
+<% if flash[:notice] %>
+  <div class="alert alert-success mb-0"><i class="fa-solid fa-check "></i><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert alert-danger mb-0"><i class="fa-solid fa-triangle-exclamation"></i><%= flash[:alert] %></div>
+<% end %>

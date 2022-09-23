@@ -1,0 +1,14 @@
+<% provide(:title, "退会") %>
+<div class="container-fluid position-absolute z-2">
+  <div class="user col-lg-7 mx-auto mt-3 p-5">
+    <h2 class="mb-4 form_title">退会のお手続き</h2>
+    <p class="mb-4 text-secondary">
+      退会手続きをされますと、全てのサービスがご利用いただけなくなります。<br>
+      再度ご利用をいただく場合には、新規登録のお手続きが必要になります。<br>
+      本当に退会してよろしいですか？
+    </p>
+    <%= link_to "退会する", withdrawal_path, class: "form_btn d-inline-block", method: :patch, data: { confirm: "本当に退会しますか？" } %>
+    <%= link_to '退会しない', user_path(@user.id), class: "form_btn d-inline-block" %>
+  </div>
+</div>
+<%= render "shared/animated_background" %>
