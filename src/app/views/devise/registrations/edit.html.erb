@@ -16,6 +16,9 @@
       <div class="field">
         <%= f.email_field :email, autocomplete: "email", placeholder: "メールアドレス", class: "input_field" %>
       </div>
+      <div class="field">
+        <%= f.text_area :introduction, placeholder: "自己紹介", class: "input_field text_area" %>
+      </div>
       <div class="mb-4">
         <%= f.submit "変更する", class: "form_btn" %>
       </div>
