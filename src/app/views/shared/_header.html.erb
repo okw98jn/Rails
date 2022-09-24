@@ -8,6 +8,11 @@
     <div class="header_right">
       <% if user_signed_in? %>
         <div class="menu_item">
+          <%= link_to users_path do%>
+            <i class="fa-solid fa-users fa-2x icon_color"></i>
+          <% end %>
+        </div>
+        <div class="menu_item">
           <%= link_to user_path(current_user.id) do%>
             <i class="fa-solid fa-user fa-2x icon_color"></i>
           <% end %>
