@@ -1,7 +1,8 @@
 <% provide(:title, "ユーザー一覧") %>
 <div class="container-fluid position-absolute z-2">
-  <div class="user col-lg-8 mx-auto">
-    <h2 class="mb-2 form_title">ユーザー</h2>
+  <div class="user col-lg-8 mx-auto mt-5">
+    <%= image_tag 'users_icon.png', class: "mb-3", size: '90' %>
+    <h2 class="mb-4 form_title">ユーザー</h2>
     <% @users.each do |user| %>
       <%= link_to user_path(user.id) do%>
         <div class="user_block">
@@ -15,6 +16,7 @@
         </div>
       <% end %>  
     <% end %>
-  </div>  
+  </div>
+  <%= paginate @users %>
 </div>
 <%= render "shared/animated_background" %>
