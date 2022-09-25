@@ -6,8 +6,8 @@
     </div>
     <h2 class="user_name"><%= @user.name %></h2>
     <div class="follows_link">
-      <%= link_to "フォロー", "/" %>
-      <%= link_to "フォロワー", "/" %>
+      <%= link_to "#{@user.followings.count}フォロー", user_followings_path(@user) %>
+      <%= link_to "#{@user.followers.count}フォロワー", user_followers_path(@user) %>
     </div>
     <% if @user.id == current_user.id %>
       <div class="user_link_btn mb-3">
@@ -21,11 +21,7 @@
         <% end %>  
       </div>
     <% end %>
-    <% if @user.id != current_user.id %>
-      <div class="follow_btn mb-3">
-        <%= link_to "フォロー", "/" %>
-      </div>
-    <% end %>
+    <%= render "shared/follow_btn" %>
     <p class="user_introduction"><%= @user.introduction %></p>
     <% if @user.id == current_user.id %>
       <% unless @user.email == 'aaa@aaa.com' %>
