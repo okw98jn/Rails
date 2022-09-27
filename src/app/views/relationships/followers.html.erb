@@ -1,0 +1,10 @@
+<% provide(:title, "フォロワー") %>
+<div class="container-fluid position-absolute z-2">
+  <div class="user col-lg-8 mx-auto mt-5">
+    <%= image_tag 'users_icon.png', class: "mb-3", size: '90' %>
+    <h2 class="mb-4 form_title">フォロワー</h2>
+    <%= render "shared/follow_list"%>
+  </div>
+  <%= paginate @users %>
+</div>
+<%= render "shared/animated_background" %>

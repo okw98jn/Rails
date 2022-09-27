@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :unsubscribe, :withdrawal]
   before_action :ensure_normal_user, only: [:unsubscribe, :withdrawal]
+  before_action :cannot_changed_other_user, only: [:unsubscribe, :withdrawal]
+  before_action :authenticate_user!
+
+  def index
+    @users = User.where(is_deleted: false).where.not(id: current_user.id).page(params[:page]).per(4)
+  end
 
   def show
   end
@@ -23,10 +29,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # ゲストユーザーは編集できない
+  # ゲストユーザーは退会できない
   def ensure_normal_user
     if @user.email == 'aaa@aaa.com'
       redirect_to user_path(@user.id), alert: 'ゲストユーザーは退会できません。'
+    end
+  end
+
+  # 他のユーザーの操作はできない
+  def cannot_changed_other_user
+    unless @user.id == current_user.id
+      redirect_to user_path(current_user.id), alert: '他のアカウントは操作できません'
     end
   end
 end

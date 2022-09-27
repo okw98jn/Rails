@@ -1,0 +1,17 @@
+<% if @users.exists? %>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id) do%>
+      <div class="user_block">
+        <div class="user_image">
+          <%= render "shared/user_image", user: user %>
+        </div>
+        <div class="user_right">
+          <%= user.name %>
+          <p><%= user.introduction %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% else %>
+  <p class="text_color">ユーザーはいません</p>
+<% end %>

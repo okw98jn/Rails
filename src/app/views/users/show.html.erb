@@ -6,19 +6,29 @@
     </div>
     <h2 class="user_name"><%= @user.name %></h2>
     <div class="follows_link">
-      <%= link_to "フォロー", "/" %>
-      <%= link_to "フォロワー", "/" %>
+      <%= link_to "#{@user.followings.count}フォロー", user_followings_path(@user) %>
+      <%= link_to "#{@user.followers.count}フォロワー", user_followers_path(@user) %>
     </div>
-    <div class="user_link_btn mb-3">
-      <%= link_to "/" do%>
-        <i class="fa-solid fa-plus"></i>作成
+    <% if @user.id == current_user.id %>
+      <div class="user_link_btn mb-3">
+        <%= link_to "/" do%>
+          <i class="fa-solid fa-plus"></i>作成
+        <% end %>
+        <% unless @user.email == 'aaa@aaa.com' %>
+          <%= link_to edit_user_registration_path do%>
+            <i class="fa-solid fa-user-pen"></i>編集
+          <% end %>
+        <% end %>  
+      </div>
+    <% end %>
+    <%= render "shared/follow_btn" %>
+    <p class="user_introduction"><%= @user.introduction %></p>
+    <% if @user.id == current_user.id %>
+      <% unless @user.email == 'aaa@aaa.com' %>
+        <%= link_to unsubscribe_path, class: "unsubscribe_link" do%>
+          <i class="fa-solid fa-user-slash"></i>退会する
+        <% end %>
       <% end %>
-      <%= link_to edit_user_registration_path do%>
-        <i class="fa-solid fa-user-pen"></i>編集
-      <% end %>
-    </div>
-    <%= link_to unsubscribe_path, class: "unsubscribe_link" do%>
-      <i class="fa-solid fa-user-slash"></i>退会する
     <% end %>
   </div>
 </div>
