@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Relationship, type: :model do
   describe '#create' do
-    let(:user) { FactoryBot.create(:user, email: "test@example.com") }
-    let(:another_user) { FactoryBot.create(:user, email: "rails@example.com") }
+    let(:user) { FactoryBot.create(:user) }
+    let(:another_user) { FactoryBot.create(:user) }
     let(:relationship) { user.follow(another_user.id) }
     let(:another_relationship) { user.follow(another_user.id) }
 

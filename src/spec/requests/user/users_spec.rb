@@ -106,7 +106,7 @@ RSpec.describe "Users", type: :request do
   end
 
   describe "#unsubscribe" do
-    let(:another_user) { FactoryBot.create(:user, email: "rails@example.com") }
+    let(:another_user) { FactoryBot.create(:user) }
 
     context "ログイン済みユーザーの場合" do
       it "正常にレスポンスを返すこと" do
