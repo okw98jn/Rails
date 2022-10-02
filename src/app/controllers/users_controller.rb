@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :unsubscribe, :withdrawal]
   before_action :ensure_normal_user, only: [:unsubscribe, :withdrawal]
-  before_action :cannot_changed_other_user, only: [:unsubscribe, :withdrawal]
   before_action :authenticate_user!
+  before_action :cannot_changed_other_user, only: [:unsubscribe, :withdrawal]
 
   def index
     @users = User.where(is_deleted: false).where.not(id: current_user.id).page(params[:page]).per(4)
