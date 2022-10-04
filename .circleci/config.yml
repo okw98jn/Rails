@@ -14,7 +14,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: yarn Install
-          command: yarn install
+          command: bundle exec yarn install
       - run: bundle exec bin/webpack
 
   rubocop:
