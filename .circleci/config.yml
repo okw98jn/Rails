@@ -12,6 +12,10 @@ jobs:
       - checkout:
           path: ~/My-Food-Diary
       - ruby/install-deps
+      - run:
+          name: yarn Install
+          command: yarn install
+      - run: bundle exec bin/webpack
 
   rubocop:
     docker:
