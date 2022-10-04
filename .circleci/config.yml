@@ -12,10 +12,6 @@ jobs:
       - checkout:
           path: ~/My-Food-Diary
       - ruby/install-deps
-      - run:
-          name: yarn Install
-          command: bundle exec yarn install
-      - run: bundle exec bin/webpack
 
   rubocop:
     docker:
@@ -50,6 +46,10 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
+      - run:
+          name: yarn Install
+          command: bundle exec yarn install
+      - run: bundle exec bin/webpack
       - run:
           name: rspec
           command: bundle exec rspec
