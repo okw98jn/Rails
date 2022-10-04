@@ -3,18 +3,22 @@
   <div class="user col-lg-8 mx-auto mt-5">
     <%= image_tag 'users_icon.png', class: "mb-3", size: '90' %>
     <h2 class="mb-4 form_title">ユーザー</h2>
-    <% @users.each do |user| %>
-      <%= link_to user_path(user.id) do%>
-        <div class="user_block">
-          <div class="user_image">
-            <%= render "shared/user_image", user: user %>
+    <% if @users.exists? %>
+      <% @users.each do |user| %>
+        <%= link_to user_path(user.id) do%>
+          <div class="user_block">
+            <div class="user_image">
+              <%= render "shared/user_image", user: user %>
+            </div>
+            <div class="user_right">
+              <%= user.name %>
+              <p><%= user.introduction %></p>
+            </div>
           </div>
-          <div class="user_right">
-            <%= user.name %>
-            <p><%= user.introduction %></p>
-          </div>
-        </div>
-      <% end %>  
+        <% end %>
+      <% end %>
+    <% else %>
+      <p class="text_color">ユーザーはいません</p>
     <% end %>
   </div>
   <%= paginate @users %>

@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/ruby:2.7.3
+      - image: cimg/ruby:2.7.3-node
     working_directory: ~/My-Food-Diary/src
     steps:
       - checkout:
@@ -27,7 +27,7 @@ jobs:
 
   rspec:
     docker:
-      - image: cimg/ruby:2.7.3
+      - image: cimg/ruby:2.7.3-node
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -46,6 +46,10 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
+      - run:
+          name: yarn Install
+          command: bundle exec yarn install
+      - run: bundle exec bin/webpack
       - run:
           name: rspec
           command: bundle exec rspec
