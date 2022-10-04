@@ -15,7 +15,7 @@ jobs:
 
   rubocop:
     docker:
-      - image: cimg/ruby:2.7.3-node
+      - image: cimg/ruby:2.7.3
     working_directory: ~/My-Food-Diary/src
     steps:
       - checkout:
@@ -56,7 +56,7 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/ruby:2.7.3-node
+      - image: cimg/ruby:2.7.3
     steps:
       - checkout
       - setup_remote_docker:
