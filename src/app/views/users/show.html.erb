@@ -11,7 +11,7 @@
     </div>
     <% if @user.id == current_user.id %>
       <div class="user_link_btn mb-3">
-        <%= link_to "/" do%>
+        <%= link_to new_post_path do%>
           <i class="fa-solid fa-plus"></i>作成
         <% end %>
         <% unless @user.email == 'aaa@aaa.com' %>
