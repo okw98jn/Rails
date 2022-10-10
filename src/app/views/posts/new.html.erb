@@ -20,9 +20,22 @@
             <%= f.file_field :post_image, class:'file_input' %>
           </label>
         </div>
+        <div class="material_field">
+          <p>材料</p>
+          <%= f.fields_for :materials, local: true do |t| %>
+            <%= render "material_fields", f: t %>
+          <% end %>
+          <div id="detail-association-insertion-point"></div>
+          <%= link_to_add_association "材料を追加", f, :materials,
+          class: 'add_btn',
+          data: {
+            association_insertion_node: '#detail-association-insertion-point',
+            association_insertion_method: 'append'
+            }
+          %>
+        </div>
         <%= f.submit "作成する", class: "post_btn" %>
       <% end %>
     </div>
   </div>
 </div>
-<%= render "shared/animated_background" %>

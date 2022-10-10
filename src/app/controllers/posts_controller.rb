@@ -3,13 +3,14 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @materials = @post.materials.build
   end
 
   def create
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "投稿が完了しました"
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
     else
       flash[:danger] = @post.errors.full_messages
       redirect_to new_post_path
@@ -22,6 +23,6 @@ class PostsController < ApplicationController
   protected
 
   def post_params
-    params.require(:post).permit(:title, :post_image, :description).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :post_image, :description, materials_attributes: [:material_name, :quantity, :_destroy]).merge(user_id: current_user.id)
   end
 end

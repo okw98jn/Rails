@@ -54,14 +54,57 @@
     color: white;
   }
 }
-.post_btn{
+.post_btn {
   width: 80%;
   padding: 15px 30px;
   color: rgb(255, 255, 255);
   background-color: rgba(255, 168, 69, 0.641);
   border: none;
   border-radius: 30px;
-  &:hover{
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.material_field {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 80%;
+  text-align: left;
+  font-size: 18px;
+  input {
+    border: none;
+    border-bottom: 2px solid rgba(104, 94, 84, 0.123);
+    outline: 0;
+    &:focus {
+      border-bottom: 2px solid rgb(124, 95, 71);
+    }
+    &:first-child {
+      width: 50%;
+      margin-right: 20px;
+    }
+  }
+}
+.trash_icon {
+  color: rgb(101, 101, 101);
+  height: 30px;
+  margin-left: 10px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.material_content {
+  margin-bottom: 10px;
+}
+.add_btn {
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  padding: 8px 20px;
+  margin-top: 5px;
+  background-color: rgb(137, 110, 85);
+  border-radius: 30px;
+  &:hover {
+    color: white;
     opacity: 0.8;
   }
 }
