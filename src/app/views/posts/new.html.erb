@@ -1,0 +1,28 @@
+<% provide(:title, "レシピ投稿") %>
+<div class="container-fluid position-absolute z-2">
+  <div class="user col-lg-9 mx-auto mt-3 p-5">
+    <h2 class="mb-4 form_title">レシピ作成</h2>
+    <div class="post_form mt-5">
+      <%= form_with model: @post , local: true do |f| %>
+        <%= render "shared/flash_error" %>
+        <div class = "post_field">
+          <%= f.label :title ,"料理名", class: "required" %>
+          <%= f.text_field :title, placeholder: "料理名を入力", class: "post_placeholder"%>
+        </div>
+        <div class="post_field">
+          <%= f.label :description ,"コメント" %>
+          <%= f.text_field :description, placeholder: "コメントを入力"%>
+        </div>
+        <div class="post_field">
+          <%= f.label :post_image ,"画像", class: "required mb-2" %>
+          <label class="post_file_field ">
+            <p><i class="fa-solid fa-camera"></i>写真を選択</p>
+            <%= f.file_field :post_image, class:'file_input' %>
+          </label>
+        </div>
+        <%= f.submit "作成する", class: "post_btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "shared/animated_background" %>

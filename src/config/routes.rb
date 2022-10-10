@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   get '/users/:id/unsubscribe', to: 'users#unsubscribe', as: 'unsubscribe'
   # 退会処理
   patch '/users/:id/withdrawal', to: 'users#withdrawal', as: 'withdrawal'
+
+  resources :posts
 end

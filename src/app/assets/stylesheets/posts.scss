@@ -1,0 +1,67 @@
+.post_form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgb(158, 158, 158);
+}
+.post_field {
+  margin: 0 auto;
+  width: 80%;
+  label {
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    color: rgb(72, 72, 72);
+  }
+  .required::after {
+    color: white;
+    font-size: 11px;
+    background-color: red;
+    border-radius: 12px;
+    padding: 0px 6px;
+    margin-left: 6px;
+    opacity: 0.8;
+    content: "必須";
+  }
+  input {
+    width: 100%;
+    margin: 5px 0;
+    border: 2px solid gray;
+    opacity: 0.8;
+    padding: 10px;
+    font-size: 18px;
+    outline: 0;
+    color: gray;
+    border-radius: 5px;
+    &:focus {
+      border: 2px solid rgb(255, 188, 134);
+    }
+  }
+}
+.post_file_field {
+  background-color: rgb(250, 193, 87);
+  cursor: pointer;
+  padding: 15px 30px;
+  width: 40%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  &:hover {
+    opacity: 0.6;
+  }
+  p {
+    margin: 0;
+    text-align: center;
+    color: white;
+  }
+}
+.post_btn{
+  width: 80%;
+  padding: 15px 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 168, 69, 0.641);
+  border: none;
+  border-radius: 30px;
+  &:hover{
+    opacity: 0.8;
+  }
+}

@@ -39,9 +39,10 @@
     color: #ff731cc0;
   }
 }
-::placeholder {
+.input_field::placeholder {
   color: white;
 }
+
 .form_btn {
   width: 25%;
   padding: 12px 16px;
