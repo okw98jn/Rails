@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_10_121040) do
+ActiveRecord::Schema.define(version: 2022_10_11_121806) do
 
   create_table "materials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "post_id", null: false
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2022_10_10_121040) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "procedures", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.text "explanation"
+    t.string "process_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_procedures_on_post_id"
   end
 
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -57,4 +66,5 @@ ActiveRecord::Schema.define(version: 2022_10_10_121040) do
 
   add_foreign_key "materials", "posts"
   add_foreign_key "posts", "users"
+  add_foreign_key "procedures", "posts"
 end

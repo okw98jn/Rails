@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @materials = @post.materials.build
+    @procedures = @post.procedures.build
   end
 
   def create
@@ -23,6 +24,8 @@ class PostsController < ApplicationController
   protected
 
   def post_params
-    params.require(:post).permit(:title, :post_image, :description, materials_attributes: [:material_name, :quantity, :_destroy]).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :post_image, :description,
+                                materials_attributes: [:id, :material_name, :quantity, :_destroy],
+                                procedures_attributes: [:id, :explanation, :process_image]).merge(user_id: current_user.id)
   end
 end
