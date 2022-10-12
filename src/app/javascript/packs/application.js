@@ -19,3 +19,5 @@ require("@nathanvda/cocoon")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "./post_tab";
