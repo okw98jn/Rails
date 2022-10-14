@@ -183,6 +183,13 @@
   margin: 0 auto;
   margin-bottom: 30px;
 }
+.edit_user_image img {
+  margin-top: 30px;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    }
+}
 .user_name {
   font-size: 16px;
   font-weight: bold;
@@ -249,19 +256,6 @@
   white-space: pre-wrap;
 }
 /* 編集ページ */
-.file_input {
-  display: none;
-}
-.file_field {
-  cursor: pointer;
-  margin-top: 30px;
-  img {
-    margin-bottom: 0px;
-  }
-}
-.file_field img:hover {
-  opacity: 0.7;
-}
 .text_area {
   height: 100px;
 }
