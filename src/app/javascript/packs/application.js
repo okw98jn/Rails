@@ -21,3 +21,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "./post_tab";
+import "./preview";

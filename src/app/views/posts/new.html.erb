@@ -15,10 +15,12 @@
         </div>
         <div class="post_field">
           <%= f.label :post_image ,"画像", class: "required mb-2" %>
-          <label class="post_file_field ">
-            <p><i class="fa-solid fa-camera"></i>写真を選択</p>
-            <%= f.file_field :post_image, class:'file_input' %>
-          </label>
+          <%= f.file_field :post_image, style: 'display:none;', id: :img_field %>
+          <% if @post.post_image.present? %>
+            <%= image_tag @post.post_image.url, id: :img_prev, onClick: "$('#img_field').click()" %>
+          <% else %>
+            <%= image_tag 'noimage.png', id: :img_prev, onClick: "$('#img_field').click()" %>
+          <% end %>
         </div>
         <div class="material_field">
           <p class="post_border">材料</p>
