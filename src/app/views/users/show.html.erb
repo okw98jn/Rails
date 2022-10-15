@@ -1,6 +1,6 @@
 <% provide(:title, "マイページ") %>
 <div class="container-fluid position-absolute z-2 pb-5">
-  <div class="user col-lg-8 mx-auto">
+  <div class="user col-lg-8 mx-auto post_form">
     <div class="user_image">
       <%= render "shared/user_image", user: @user %>
     </div>
@@ -31,30 +31,29 @@
     <%= render "shared/follow_btn" %>
     <p class="user_introduction"><%= @user.introduction %></p>
     <ul class="post_tab">
-      <li class="tab post_tab_active">レシピ</li>
+      <li class="tab post_tab_active"><span><%= @posts.count %></span>レシピ</li>
       <li class="tab">お気に入り</li>
     </ul>
     <div class="post_content content_active">
-      <div class="post_photo">
-        <p>投稿</p>
-      </div>
-      <div class="post_photo">
-        <p>投稿</p>
-      </div>
-      <div class="post_photo">
-        <p>投稿</p>
-      </div>
+      <% @posts.each do |post| %>
+        <div class="post_photo">
+          <%= link_to post_path(post.id) do %>
+            <% if post.post_image? %>
+              <%= image_tag post.post_image.url %>
+            <% end %>
+            <div class="post_text">
+              <p><%= post.created_at.strftime("%Y年%m月%d日") %></p>
+              <p><%= post.title %></p>
+              <p><%= post.description %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="post_content">
       <div class="post_photo">
         <p>お気に入り</p>
       </div>
-      <div class="post_photo">
-        <p>お気に入り</p>
-      </div>
-      <div class="post_photo">
-        <p>お気に入り</p>
-      </div>
     </div>
   </div>
-  </div>
+</div>
