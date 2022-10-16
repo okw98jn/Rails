@@ -38,9 +38,7 @@
       <% @posts.each do |post| %>
         <div class="post_photo">
           <%= link_to post_path(post.id) do %>
-            <% if post.post_image? %>
-              <%= image_tag post.post_image.url %>
-            <% end %>
+            <%= image_tag post.post_image.url %>
             <div class="post_text">
               <p><%= post.created_at.strftime("%Y年%m月%d日") %></p>
               <p><%= post.title %></p>
