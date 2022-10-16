@@ -46,8 +46,10 @@
         <h2>作り方</h2>
         <% @procedures.each.with_index(1) do |procedure, index| %>
           <div class="procedure_item">
-            <p class="procedure_index"><%= index %></p>
-            <p><%= procedure.explanation %></p>
+            <div class="procedure_item_left">
+              <p class="procedure_index"><%= index %></p>
+              <p><%= procedure.explanation %></p>
+            </div>
             <% if procedure.process_image.url %>
               <%= image_tag procedure.process_image.url %>
             <% end %>
