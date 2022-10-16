@@ -24,6 +24,9 @@
     </div>
     <div class="material_field">
       <p class="post_border">材料</p>
+      <div class="material_select">
+        <%= f.select :number_of_persons,['1人前', '2人前', '3人前', '4人前', '5人前', '6人前', '7人前', '8人前'] %>
+      </div>
       <%= f.fields_for :materials, local: true do |t| %>
         <%= render "material_fields", f: t %>
       <% end %>
