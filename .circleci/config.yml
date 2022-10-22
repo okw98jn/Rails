@@ -11,6 +11,13 @@ jobs:
     steps:
       - checkout:
           path: ~/My-Food-Diary
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      - run:
+          name: Bundle Update
+          command: bundle update
       - ruby/install-deps
 
   rubocop:
