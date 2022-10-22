@@ -16,10 +16,10 @@
       <i class="fa-regular fa-heart trash_icon"></i>
       <% if @post.user_id == current_user.id %>
         <div class="post_links">
-          <%= link_to edit_post_path(@post.id) do %>
+          <%= link_to edit_post_path(@post.id), class: "edit_icon" do %>
             <i class="fa-regular fa-pen-to-square trash_icon"></i>
           <% end %>
-          <%= link_to post_path(@post.id), method: :delete, data: { confirm: "レシピを削除しますか？" } do %>
+          <%= link_to post_path(@post.id), method: :delete, data: { confirm: "レシピを削除しますか？" }, class: "delete_icon" do %>
             <i class="fa-solid fa-trash-can trash_icon"></i>
           <% end %>
         </div>
