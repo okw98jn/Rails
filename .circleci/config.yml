@@ -2,6 +2,7 @@ version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.2
   heroku: circleci/heroku@1.2.3
+  browser-tools: circleci/browser-tools@1.1.3
 
 jobs:
   build:
@@ -49,11 +50,10 @@ jobs:
       - checkout:
           path: ~/My-Food-Diary
       - run:
-          command: chromedriver
-          background: true
-      - run:
           name: Bundle Install
-          command: bundle check || bundle install    
+          command: bundle check || bundle install
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
       - ruby/install-deps
       - run:
           name: Database setup
