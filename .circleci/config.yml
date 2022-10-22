@@ -33,7 +33,7 @@ jobs:
 
   rspec:
     docker:
-      - image: cimg/ruby:2.7.3-node
+      - image: cimg/ruby:2.7.3-node-browsers
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -48,16 +48,6 @@ jobs:
     steps:
       - checkout:
           path: ~/My-Food-Diary
-      - run:
-          name: Chrome Driver Install
-          command: |
-            sudo apt install libappindicator3-1
-            curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo dpkg -i google-chrome.deb
-            sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
-            rm google-chrome.deb      
-
-          background: true    
       - run:
           name: Bundle Install
           command: bundle check || bundle install    
