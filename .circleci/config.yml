@@ -48,9 +48,9 @@ jobs:
     steps:
       - checkout:
           path: ~/My-Food-Diary
-      - run: sudo apt-get update
-      - circleci-images/install-chrome
-      - circleci-images/install-chromedriver
+      - run:
+          command: chromedriver
+          background: true
       - run:
           name: Bundle Install
           command: bundle check || bundle install    
