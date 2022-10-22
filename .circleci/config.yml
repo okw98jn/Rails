@@ -54,7 +54,7 @@ jobs:
             curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
             echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
             sudo apt-get update && sudo apt-get install -y unzip
-            wget -N http://chromedriver.storage.googleapis.com/87.0.4280.88/chromedriver_linux64.zip -P ~/
+            wget -N http://chromedriver.storage.googleapis.com/106.0.5249.119/chromedriver_linux64.zip -P ~/
             unzip ~/chromedriver_linux64.zip -d ~/
             rm ~/chromedriver_linux64.zip
             sudo chown root:root ~/chromedriver
