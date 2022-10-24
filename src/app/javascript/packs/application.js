@@ -13,6 +13,13 @@ import "bootstrap";
 import "@fortawesome/fontawesome-free/js/all";
 import "../src/application";
 
+require("jquery");
+require("@nathanvda/cocoon")
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "./post_tab";
+import "./preview";
+import "./flash_fadeout";

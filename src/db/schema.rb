@@ -10,7 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_03_153621) do
+ActiveRecord::Schema.define(version: 2022_10_16_072420) do
+
+  create_table "materials", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.string "material_name"
+    t.string "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_materials_on_post_id"
+  end
+
+  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.string "post_image"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "time"
+    t.string "number_of_persons"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "procedures", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.text "explanation"
+    t.string "process_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_procedures_on_post_id"
+  end
 
   create_table "relationships", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "follower_id"
@@ -36,4 +66,7 @@ ActiveRecord::Schema.define(version: 2022_10_03_153621) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "materials", "posts"
+  add_foreign_key "posts", "users"
+  add_foreign_key "procedures", "posts"
 end

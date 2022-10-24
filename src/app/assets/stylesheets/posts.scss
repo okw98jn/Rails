@@ -1,0 +1,379 @@
+/* 投稿ページ */
+.post_form {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgb(158, 158, 158);
+}
+.post_field {
+  margin: 0 auto;
+  width: 80%;
+  label {
+    display: block;
+    font-size: 18px;
+    text-align: left;
+    color: rgb(72, 72, 72);
+  }
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+  .required::after {
+    color: white;
+    font-size: 11px;
+    background-color: red;
+    border-radius: 12px;
+    padding: 0px 6px;
+    margin-left: 6px;
+    opacity: 0.8;
+    content: "必須";
+  }
+  input,
+  textarea {
+    width: 100%;
+    margin: 5px 0;
+    border: 2px solid rgba(126, 126, 126, 0.421);
+    opacity: 0.8;
+    padding: 8px 10px;
+    font-size: 18px;
+    outline: 0;
+    border-radius: 5px;
+    &:focus {
+      border: 2px solid rgb(124, 95, 71);
+    }
+  }
+  textarea {
+    height: 100px;
+  }
+}
+.time_select {
+  text-align: left;
+  select,
+  option {
+    border-radius: 50px;
+    outline: 0;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding: 7px 10px;
+    border: 2px solid #7b6047;
+    color: rgb(86, 81, 77);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.post_file_field {
+  background-color: rgb(250, 193, 87);
+  cursor: pointer;
+  padding: 15px 30px;
+  width: 40%;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  &:hover {
+    opacity: 0.6;
+  }
+  p {
+    margin: 0;
+    text-align: center;
+    color: white;
+  }
+}
+.post_btn {
+  width: 30%;
+  padding: 15px 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 168, 69, 0.641);
+  border: none;
+  border-radius: 30px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.material_field {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 80%;
+  text-align: left;
+  font-size: 18px;
+  input {
+    border: none;
+    border-bottom: 2px solid rgba(104, 94, 84, 0.123);
+    outline: 0;
+    &:focus {
+      border-bottom: 2px solid rgb(124, 95, 71);
+    }
+    &:first-child {
+      width: 50%;
+      margin-right: 20px;
+    }
+  }
+}
+.trash_icon {
+  color: rgb(101, 101, 101);
+  height: 30px;
+  margin-left: 10px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.material_content {
+  margin-bottom: 10px;
+}
+.material_select {
+  select,
+  option {
+    border-radius: 50px;
+    outline: 0;
+    font-size: 14px;
+    padding: 4px 8px;
+    border: 2px solid #7b6047;
+    color: rgb(86, 81, 77);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.add_btn {
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  padding: 8px 20px;
+  margin-top: 5px;
+  background-color: rgb(137, 110, 85);
+  border-radius: 30px;
+  &:hover {
+    color: white;
+    opacity: 0.8;
+  }
+}
+.procedure_field {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  width: 80%;
+  text-align: left;
+  font-size: 18px;
+}
+.explanation {
+  border: none;
+  border-bottom: 2px solid rgba(104, 94, 84, 0.123);
+  outline: 0;
+  width: 90%;
+  margin-bottom: 15px;
+  margin-right: 100px;
+  &:focus {
+    border-bottom: 2px solid rgb(124, 95, 71);
+  }
+}
+.process_image {
+  font-size: 15px;
+  color: rgb(78, 61, 32);
+  width: 70%;
+  &::before {
+    content: "手順の画像  :  ";
+  }
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.post_border {
+  border-bottom: 2px solid rgb(123, 96, 71);
+}
+/* マイページのタブメニュー */
+.posts_zone {
+  background-color: rgba(244, 244, 244, 0.666);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 8px rgb(158, 158, 158);
+  margin-bottom: 30px;
+}
+.post_tab {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 0;
+}
+.post_tab li {
+  width: 50%;
+  font-size: 20px;
+  color: rgb(151, 148, 148);
+  border-bottom: 5px solid rgb(132, 120, 75);
+  cursor: pointer;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.post_tab_active {
+  color: rgb(59, 62, 62) !important;
+  font-weight: bold;
+  border: 5px solid rgb(132, 120, 75);
+  border-radius: 10px 10px 0 0;
+  border-bottom: none !important;
+}
+.post_content {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 100px;
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.favorite_content {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 100px;
+  display: none;
+}
+.post_photo {
+  width: 32.5%;
+  height: 300px;
+  box-shadow: 0 2px 5px #ccc;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 34px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.5s;
+  }
+  img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px 5px 0 0;
+    object-fit: cover;
+  }
+}
+.post_text {
+  text-align: left;
+  padding: 5px 10px;
+  color: rgb(96, 70, 31);
+  p {
+    margin-bottom: 0px;
+    &:nth-child(2) {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    &:last-child {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
+    }
+  }
+}
+.content_active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.content_active::after {
+  width: 32.5%;
+  display: block;
+  content: "";
+}
+
+/* レシピ詳細ページ */
+.post_title {
+  color: rgb(89, 51, 9) !important;
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgb(194, 182, 170);
+}
+.post_date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.post_category {
+  margin-right: 20px;
+}
+.post_date_time {
+  color: rgb(88, 81, 72);
+}
+.post_width {
+  width: 90%;
+  margin: 0 auto;
+}
+.post_show_image {
+  img {
+    width: 70%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 7px 34px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 5px;
+  }
+}
+.post_menu {
+  width: 70%;
+}
+.post_description {
+  width: 70%;
+  border: 2px solid rgb(194, 182, 170);
+  white-space: pre-line;
+  text-align: left;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 18px;
+  color: rgb(89, 51, 9);
+  margin-bottom: 30px;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+.show_material,
+.show_procedure {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-bottom: 30px;
+  h2 {
+    color: rgb(89, 51, 9);
+  }
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+.show_procedure {
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+.material_item,
+.procedure_item {
+  border-bottom: 1px solid rgb(194, 182, 170);
+  margin-bottom: 10px;
+  padding: 0 50px 10px 50px;
+  color: rgb(89, 51, 9);
+}
+.procedure_item {
+  text-align: left !important;
+  padding: 0 20px 10px 0px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 120px;
+    object-fit: cover;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+}
+.procedure_item_left {
+  display: flex;
+  align-items: center;
+}
+.procedure_index {
+  padding: 3px 10px;
+  font-size: 18px;
+  margin-right: 20px;
+  background-color: rgb(89, 51, 9);
+  color: white;
+  border-radius: 5px;
+}

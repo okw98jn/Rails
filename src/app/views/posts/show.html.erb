@@ -1,0 +1,61 @@
+<% provide(:title, "レシピ") %>
+<div class="container-fluid position-absolute z-2 pb-5">
+  <div class="user col-lg-9 mx-auto mt-5 p-5 post_form">
+    <h2 class="mb-4 form_title post_title"><%= @post.title %></h2>
+    <div class="post_date post_width">
+      <p class="post_date_time"><%= @post.created_at.strftime("%Y年%m月%d日") %></p>
+      <div class="post_date post_date_time">
+        <p class="post_category">肉料理</p>
+        <p><i class="fa-regular fa-clock"></i>: <%= @post.time %></p>
+      </div>
+    </div>
+    <div class="post_show_image">
+      <%= image_tag @post.post_image.url %>
+    </div>
+    <div class="post_menu mx-auto post_date">
+      <i class="fa-regular fa-heart trash_icon"></i>
+      <% if @post.user_id == current_user.id %>
+        <div class="post_links">
+          <%= link_to edit_post_path(@post.id), class: "edit_icon" do %>
+            <i class="fa-regular fa-pen-to-square trash_icon"></i>
+          <% end %>
+          <%= link_to post_path(@post.id), method: :delete, data: { confirm: "レシピを削除しますか？" }, class: "delete_icon" do %>
+            <i class="fa-solid fa-trash-can trash_icon"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <% if @post.description.present? %>
+      <div class="post_description mx-auto mt-4">
+        <p><%= @post.description %></p>
+      </div>
+    <% end %>
+    <% if @materials.present? %>
+      <div class="show_material">
+        <h2>材料・調味料(<%= @post.number_of_persons %>)</h2>
+        <% @materials.each do |material| %>
+          <div class="post_date material_item">
+            <p><%= material.material_name %></p>
+            <p><%= material.quantity %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @procedures.present? %>
+      <div class="show_procedure">
+        <h2>作り方</h2>
+        <% @procedures.each.with_index(1) do |procedure, index| %>
+          <div class="procedure_item">
+            <div class="procedure_item_left">
+              <p class="procedure_index"><%= index %></p>
+              <p><%= procedure.explanation %></p>
+            </div>
+            <% if procedure.process_image.url %>
+              <%= image_tag procedure.process_image.url %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

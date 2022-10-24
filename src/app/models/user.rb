@@ -5,6 +5,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable
 
   mount_uploader :user_image, ImageUploader
+  has_many :posts
 
   # フォローをした、されたの関係
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy

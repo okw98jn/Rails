@@ -79,11 +79,21 @@ RSpec.feature "Users", type: :system do
     end
   end
 
-  feature "マイページ", type: :system do
+  feature "マイページ", type: :system, js: true do
     given!(:user) { FactoryBot.create(:user) }
     given!(:another_user) { FactoryBot.create(:user) }
+    given!(:posts) { FactoryBot.create_list(:post, 5, user: user) }
     background do
       sign_in user
+    end
+
+    scenario "投稿が表示されていること" do
+      visit user_path(user.id)
+      expect(page.all('.post_photo').count).to eq posts.count
+      posts.each do |post|
+        expect(page).to have_content post.title
+        expect(page).to have_selector("img[src$='test.jpg']")
+      end
     end
     context "自分のマイページの場合" do
       scenario "作成、編集、退会が表示される" do

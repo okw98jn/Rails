@@ -1,0 +1,11 @@
+<div class="nested-fields">
+	<div class="material_content flex">
+    <div class="explanation_block">
+      <%= f.text_field :explanation, placeholder: "作り方", class: "explanation" %>
+      <%= f.file_field :process_image, class: "process_image" %>
+    </div>  
+    <%= link_to_remove_association f do%>
+      <i class="fa-solid fa-trash-can trash_icon"></i>
+    <% end %>
+	</div>
+</div>

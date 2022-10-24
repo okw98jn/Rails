@@ -1,0 +1,9 @@
+<div class="nested-fields">
+	<div class="material_content">
+		<%= f.text_field :material_name, placeholder: "材料・調味料" %>
+		<%= f.text_field :quantity, placeholder: "分量" %>
+		<%= link_to_remove_association f do%>
+			<i class="fa-solid fa-trash-can trash_icon"></i>
+		<% end %>
+	</div>
+</div>
