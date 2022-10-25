@@ -61,7 +61,7 @@
               <p><%= favorite_post.title %></p>
               <p><%= favorite_post.description %></p>
             </div>
-            <%= link_to favorite_post.user.name, user_path(favorite_post.user), class: "user_link" %>
+            <%= link_to favorite_post.user.name, user_path(favorite_post.user), class: "user_link user_link_position" %>
             <div id = "myfavorites_<%= favorite_post.id %>" class="mypage_favorites">
               <%= render "favorites/favorites_btn", post: favorite_post %>
             </div>

@@ -311,14 +311,16 @@
 }
 .user_link{
   color: gray;
-  position: absolute;
-  text-align: center;
-  bottom: 0;
   font-size: 14px;
   &:hover{
     opacity: 0.8;
     color: gray;
   }
+}
+.user_link_position{
+  position: absolute;
+  text-align: center;
+  bottom: 0;
 }
 .post_width {
   width: 90%;
