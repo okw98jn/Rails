@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   # 退会処理
   patch '/users/:id/withdrawal', to: 'users#withdrawal', as: 'withdrawal'
 
-  resources :posts
+  resources :posts do
+    resource :favorites, only: [:create, :destroy]
+  end
 end
