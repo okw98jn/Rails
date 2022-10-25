@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @user = @post.user
     @materials = @post.materials.where.not(material_name: "")
     @procedures = @post.procedures.where.not(process_image: "", explanation: "")
   end

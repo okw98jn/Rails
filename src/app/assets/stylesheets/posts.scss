@@ -232,9 +232,10 @@
 }
 .post_photo {
   width: 32.5%;
-  height: 300px;
+  height: 310px;
   box-shadow: 0 2px 5px #ccc;
   margin-bottom: 10px;
+  position: relative;
   border-radius: 5px;
   &:hover {
     transform: translateY(-5px);
@@ -243,9 +244,21 @@
   }
   img {
     width: 100%;
-    height: 200px;
+    height: 190px;
     border-radius: 5px 5px 0 0;
     object-fit: cover;
+  }
+  .mypage_favorites{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-right: 5px;
+  }
+  .trash_icon{
+    height: 20px;
+  }
+  span{
+    color: gray;
   }
 }
 .post_text {
@@ -295,6 +308,17 @@
 }
 .post_date_time {
   color: rgb(88, 81, 72);
+}
+.user_link{
+  color: gray;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  font-size: 14px;
+  &:hover{
+    opacity: 0.8;
+    color: gray;
+  }
 }
 .post_width {
   width: 90%;
