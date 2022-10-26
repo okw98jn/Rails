@@ -13,7 +13,9 @@
       <%= image_tag @post.post_image.url %>
     </div>
     <div class="post_menu mx-auto post_date">
-      <i class="fa-regular fa-heart trash_icon"></i>
+      <div id = "favorites_<%= @post.id %>">
+        <%= render "favorites/favorites_btn", post: @post %>
+      </div>
       <% if @post.user_id == current_user.id %>
         <div class="post_links">
           <%= link_to edit_post_path(@post.id), class: "edit_icon" do %>
