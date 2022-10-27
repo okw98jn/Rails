@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   # いいね
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: :user
+  # カテゴリー
+  belongs_to :category
 
   mount_uploader :post_image, ImageUploader
   validates :title, presence: true, length: { maximum: 30, allow_blank: true }

@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+categories = ['お肉料理', '野菜料理', '魚介料理', 'パスタ', 'ご飯', '麺類', 'スープ', '鍋', 'サラダ', 'パン', 'お弁当', 'スイーツ', 'その他' ]
+categories.each do |category|
+  Category.create!(name: category)
+end
