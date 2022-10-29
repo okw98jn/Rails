@@ -5,6 +5,8 @@ RSpec.feature "Posts", type: :system do
   given(:post) { FactoryBot.create(:post, user: user) }
   given(:another_user) { FactoryBot.create(:user) }
   given(:another_post) { FactoryBot.create(:post, user: another_user) }
+  given!(:category_1) { FactoryBot.create(:category, name: 'お肉料理') }
+  given!(:category_2) { FactoryBot.create(:category, name: '野菜料理') }
 
   background do
     sign_in user

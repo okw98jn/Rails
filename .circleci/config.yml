@@ -59,9 +59,6 @@ jobs:
           name: Database setup
           command: bundle exec rails db:migrate
       - run:
-          name: categoryDate setup
-          command: bundle exec rails db:seed RAILS_ENV=test
-      - run:
           name: yarn Install
           command: bundle exec yarn install
       - run: bundle exec bin/webpack
