@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :cannot_changed_other_user_post, only: [:edit, :update, :destroy]
 
   def new
@@ -54,8 +55,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def set_category
+    @categories = Category.all
+  end
+
   def post_params
-    params.require(:post).permit(:title, :post_image, :description, :time, :number_of_persons,
+    params.require(:post).permit(:title, :post_image, :description, :time, :number_of_persons, :category_id,
                                 materials_attributes: [:id, :material_name, :quantity, :_destroy],
                                 procedures_attributes: [:id, :explanation, :process_image, :_destroy]).merge(user_id: current_user.id)
   end
