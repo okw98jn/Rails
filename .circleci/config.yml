@@ -58,6 +58,7 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
+      - run:
           name: categoryDate setup
           command: bundle exec rails db:seed
       - run:
