@@ -6,5 +6,6 @@ FactoryBot.define do
     time { "10分" }
     number_of_persons { "1人前" }
     user_id { FactoryBot.create(:user).id }
+    category_id { FactoryBot.create(:category).id }
   end
 end
