@@ -60,7 +60,7 @@ jobs:
           command: bundle exec rails db:migrate
       - run:
           name: categoryDate setup
-          command: bundle exec rails db:seed
+          command: bundle exec rails db:seed RAILS_ENV=test
       - run:
           name: yarn Install
           command: bundle exec yarn install
