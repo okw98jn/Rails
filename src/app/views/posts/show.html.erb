@@ -19,10 +19,10 @@
         </div>
         <div>
           <% if @comments.exists?(user_id: current_user.id) %>
-            <i class="fa-solid fa-comment trash_icon like_btn comment_icon"></i>
+            <i class="fa-solid fa-comment trash_icon comment_icon"></i>
             <span><%= @comments.count %></span>
           <% else %>
-            <i class="fa-regular fa-comment trash_icon like_btn comment_icon"></i>
+            <i class="fa-regular fa-comment trash_icon comment_icon"></i>
             <span><%= @comments.count %></span>
           <% end %>
         </div>
