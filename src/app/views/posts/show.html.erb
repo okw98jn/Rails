@@ -101,10 +101,10 @@
             <% if comment.user_id == current_user.id %>
               <div class="comment_right">
                 <div class="post_links">
-                  <%= link_to edit_post_comment_path(@post,comment), class: "edit_icon" do %>
+                  <%= link_to edit_post_comment_path(@post,comment), class: "edit_icon comment_edit_icon" do %>
                     <i class="fa-regular fa-pen-to-square comment_trash_icon"></i>
                   <% end %>
-                  <%= link_to post_comment_path(@post,comment), method: :delete, data: { confirm: "コメントを削除しますか？" }, class: "delete_icon" do %>
+                  <%= link_to post_comment_path(@post,comment), method: :delete, data: { confirm: "コメントを削除しますか？" }, class: "delete_icon comment_delete_icon" do %>
                     <i class="fa-solid fa-trash-can comment_trash_icon"></i>
                   <% end %>
                 </div>
