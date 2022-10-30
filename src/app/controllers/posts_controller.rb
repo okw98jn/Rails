@@ -28,6 +28,8 @@ class PostsController < ApplicationController
     @user = @post.user
     @materials = @post.materials.where.not(material_name: "")
     @procedures = @post.procedures.where.not(process_image: "", explanation: "")
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user).order(updated_at: :desc)
   end
 
   def edit
