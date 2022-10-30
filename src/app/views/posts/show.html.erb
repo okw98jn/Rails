@@ -13,8 +13,19 @@
       <%= image_tag @post.post_image.url %>
     </div>
     <div class="post_menu mx-auto post_date">
-      <div id = "favorites_<%= @post.id %>">
-        <%= render "favorites/favorites_btn", post: @post %>
+      <div class="post_menu_left">
+        <div id = "favorites_<%= @post.id %>">
+          <%= render "favorites/favorites_btn", post: @post %>
+        </div>
+        <div>
+          <% if @comments.exists?(user_id: current_user.id) %>
+            <i class="fa-solid fa-comment trash_icon like_btn comment_icon"></i>
+            <span><%= @comments.count %></span>
+          <% else %>
+            <i class="fa-regular fa-comment trash_icon like_btn comment_icon"></i>
+            <span><%= @comments.count %></span>
+          <% end %>
+        </div>
       </div>
       <% if @post.user_id == current_user.id %>
         <div class="post_links">
@@ -54,6 +65,50 @@
             </div>
             <% if procedure.process_image.url %>
               <%= image_tag procedure.process_image.url %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <p class="comment_btn">コメントする</p>
+    <div class="comment_form is-open">
+      <%= form_with model: [@post, @comment] , local: true do |f| %>
+        <%= f.text_area :body, placeholder: "コメントを入力"%>
+        <%= f.submit "コメント", class: "comment_btn" %>
+      <% end %>
+    </div>
+    <% if @comments.present? %>
+      <div class="show_comment">
+        <h2>コメント</h2>
+        <% @comments.each do |comment| %>
+          <div class="comment_area">
+            <div class="comment_left">
+              <div class="comment_date">
+                <p><%= comment.updated_at.strftime("%Y年%m月%d日%H時%M分") %></p>
+              </div>
+              <div class="comment_body">
+                <div class="comment_user">
+                  <% if comment.user.user_image? %>
+                    <%= image_tag comment.user.user_image.url %>
+                  <% else %>
+                    <%= image_tag 'default_user.jpg' %>
+                  <% end %>
+                  <p><%= comment.user.name %></p>
+                </div>
+                  <p class="comment_text"><%= comment.body %></p>
+              </div>
+            </div>
+            <% if comment.user_id == current_user.id %>
+              <div class="comment_right">
+                <div class="post_links">
+                  <%= link_to edit_post_comment_path(@post,comment), class: "edit_icon" do %>
+                    <i class="fa-regular fa-pen-to-square comment_trash_icon"></i>
+                  <% end %>
+                  <%= link_to post_comment_path(@post,comment), method: :delete, data: { confirm: "コメントを削除しますか？" }, class: "delete_icon" do %>
+                    <i class="fa-solid fa-trash-can comment_trash_icon"></i>
+                  <% end %>
+                </div>
+              </div>
             <% end %>
           </div>
         <% end %>
