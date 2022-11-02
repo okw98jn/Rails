@@ -5,6 +5,8 @@ class User < ApplicationRecord
           :recoverable, :rememberable
 
   mount_uploader :user_image, ImageUploader
+
+  # 投稿
   has_many :posts
 
   # フォローをした、されたの関係
@@ -21,6 +23,10 @@ class User < ApplicationRecord
 
   # コメント
   has_many :comments, dependent: :destroy
+
+  # 通知
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   # フォローしたときの処理
   def follow(user_id)
@@ -61,6 +67,18 @@ class User < ApplicationRecord
   # 退会したユーザーがログイン出来ないようにする
   def active_for_authentication?
     super && (is_deleted == false)
+  end
+
+  # フォロー通知
+  def create_notification_follow!(current_user)
+    temp = Notification.where(["visitor_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
+    if temp.blank?
+      notification = current_user.active_notifications.new(
+        visited_id: id,
+        action: 'follow'
+      )
+      notification.save if notification.valid?
+    end
   end
 
   validates :name, presence: true, length: { maximum: 10, allow_blank: true }

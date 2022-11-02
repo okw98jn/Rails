@@ -1,0 +1,18 @@
+<div class="container-fluid position-absolute z-2 pb-5">
+  <div class="user col-lg-9 mx-auto mt-5 p-5 post_form">
+  <h2 class='notification_title'>お知らせ</h2>
+  <div class="notification_delete">
+    <%= link_to notification_path(@notifications), method: :delete, data: { confirm: "通知を削除しますか？" }, class: "delete_icon comment_delete_icon" do %>
+      <i class="fa-solid fa-trash-can comment_trash_icon"></i>全削除
+    <% end %>
+  </div>
+  
+  <% if @notifications.present? %>
+    <div class="users_index">
+        <%= render @notifications %>
+    </div>
+  <% else %>
+      <p class="not_notification">通知はありません</p>
+  <% end %>
+  </div>
+</div>
