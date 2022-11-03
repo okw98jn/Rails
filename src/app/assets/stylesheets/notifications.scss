@@ -67,3 +67,21 @@
     margin: 0 5px;
   }
 }
+.n_circle {
+  background-color: rgb(231, 107, 88);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  p {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+.circle_position {
+  position: relative;
+}
+

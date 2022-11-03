@@ -7,9 +7,16 @@
     </div>
     <div class="header_right">
       <% if user_signed_in? %>
-        <div class="menu_item">
+        <div class="menu_item circle_position">
           <%= link_to notifications_path do%>
-            <i class="fa-solid fa-bell fa-2x icon_color"></i>
+            <% if unchecked_notifications.any? %>
+              <div class='n_circle'>
+                <p><%= unchecked_notifications.count %></p>
+              </div>
+              <i class="fa-solid fa-bell fa-2x icon_color"></i>
+            <% else %>
+              <i class="fa-solid fa-bell fa-2x icon_color"></i>
+            <% end %>
           <% end %>
         </div>
         <div class="menu_item">
