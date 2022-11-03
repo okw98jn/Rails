@@ -2,8 +2,9 @@ inherit_from:
   - .rubocop_airbnb.yml
 
 Layout/LineLength:
-  Max: 170
-
+  Max: 250
+Lint/UselessAssignment:
+  Enabled: false
 AllCops:
   NewCops: enable
   Exclude:
