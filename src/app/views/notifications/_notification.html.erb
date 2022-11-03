@@ -1,4 +1,7 @@
 <% @visitor = notification.visitor %>
+<% @comment = nil %>
+<% @comment = Comment.find_by(id: notification.comment_id) %>
+
 <div class="notification_view">
   <%= link_to user_path(@visitor) do %>
     <% if @visitor.user_image? %>
@@ -9,7 +12,7 @@
   <% end %>
   <%= notification_form(notification) %>
   <% if @comment.present? %>
-    <p class="notification_comment"><%= @comment_content %></p>
+    <p class="notification_comment"><%= @comment.body %></p>
   <% end %>
   <p class="time_ago"><%= time_ago_in_words(notification.created_at) %></p>
 </div>
