@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.create(comment_params)
     if @comment.save
       redirect_to request.referer, notice: "コメントしました"
+      @post.create_notification_comment!(current_user, @comment.id)
     else
       redirect_back(fallback_location: root_path)
     end

@@ -1,0 +1,87 @@
+.notification_title {
+  color: #593309 !important;
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #c2b6aa;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.notification_delete {
+  a {
+    color: gray;
+    &:hover {
+      color: gray;
+      opacity: 0.8;
+    }
+  }
+}
+.notification_view {
+  border-bottom: solid 2.5px rgba(123, 96, 71, 0.32);
+  color: rgb(78, 78, 78);
+  padding: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  position: relative;
+  a {
+    color: rgb(34, 160, 149);
+    font-weight: bold;
+    &:hover {
+      color: rgb(34, 160, 149);
+      opacity: 0.8;
+    }
+  }
+  img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
+  }
+}
+.time_ago {
+  font-size: 14px;
+  color: rgba(71, 71, 71, 0.64);
+  font-weight: 600;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  margin-bottom: 0px !important;
+}
+.notification_comment {
+  padding: 0 30px;
+  margin-bottom: 0px !important;
+  word-wrap: break-word;
+  color: gray;
+}
+.not_notification {
+  margin-top: 30px;
+  font-size: 20px;
+  color: rgb(80, 80, 80);
+}
+.second_user {
+  img {
+    margin: 0 5px;
+  }
+}
+.n_circle {
+  background-color: rgb(231, 107, 88);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  border-radius: 50%;
+  p {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+.circle_position {
+  position: relative;
+}
+
