@@ -1,7 +1,12 @@
 <% provide(:title, "レシピ") %>
 <div class="container-fluid position-absolute z-2 pb-5">
   <div class="user col-lg-9 mx-auto mt-5 p-5 post_form">
-    <h2 class="mb-4 form_title post_title"><%= @post.title %></h2>
+    <h2 class="mb-2 form_title post_title"><%= @post.title %></h2>
+    <div class="post_user">
+      <%= link_to user_path(@post.user) do %>
+        <i class="fa-solid fa-user"></i><span class="aaa"><%= @post.user.name %></span>
+      <% end %>
+    </div>
     <div class="post_date post_width">
       <p class="post_date_time"><%= @post.created_at.strftime("%Y年%m月%d日") %></p>
       <div class="post_date post_date_time">

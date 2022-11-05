@@ -299,6 +299,21 @@
   padding-bottom: 5px;
   border-bottom: 3px solid rgb(194, 182, 170);
 }
+.post_user {
+  text-align: right;
+  padding-right: 30px;
+  margin-bottom: 5px;
+  span {
+    margin-left: 5px;
+  }
+  a {
+    color: rgb(101, 98, 93);
+    &:hover {
+      color: rgb(101, 98, 93);
+      opacity: 0.8;
+    }
+  }
+}
 .post_date {
   display: flex;
   align-items: center;
