@@ -87,14 +87,16 @@
                 <p><%= comment.updated_at.strftime("%Y年%m月%d日%H時%M分") %></p>
               </div>
               <div class="comment_body">
-                <div class="comment_user">
-                  <% if comment.user.user_image? %>
-                    <%= image_tag comment.user.user_image.url %>
-                  <% else %>
-                    <%= image_tag 'default_user.jpg' %>
-                  <% end %>
-                  <p><%= comment.user.name %></p>
-                </div>
+                <%= link_to user_path(comment.user.id) do %>
+                  <div class="comment_user">
+                    <% if comment.user.user_image? %>
+                      <%= image_tag comment.user.user_image.url %>
+                    <% else %>
+                      <%= image_tag 'default_user.jpg' %>
+                    <% end %>
+                    <p><%= comment.user.name %></p>
+                  </div>
+                <% end %>
                   <p class="comment_text"><%= comment.body %></p>
               </div>
             </div>

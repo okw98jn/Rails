@@ -465,12 +465,19 @@
 .comment_body {
   font-size: 15px;
   color: #585148;
+  a {
+    color: #585148;
+    &:hover {
+      color: #585148;
+      opacity: 0.8;
+    }
+  }
 }
 .comment_left {
   text-align: left;
   max-width: 85%;
 }
-.comment_text{
+.comment_text {
   word-wrap: break-word;
 }
 .comment_user {
@@ -501,6 +508,6 @@
     opacity: 0.8;
   }
 }
-.comment_edit{
+.comment_edit {
   display: block;
 }
