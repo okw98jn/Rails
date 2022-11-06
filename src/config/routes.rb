@@ -22,6 +22,14 @@ Rails.application.routes.draw do
   resources :posts do
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:edit, :update, :create, :destroy]
+    collection do
+      get 'search'
+      get 'post_favorite_rank'
+      get 'post_comment_rank'
+    end
+    member do
+      get 'search_category'
+    end
   end
 
   resources :notifications, only: [:index, :destroy]
