@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :cannot_changed_other_user, only: [:unsubscribe, :withdrawal]
 
   def index
-    @users = User.where(is_deleted: false).where.not(id: current_user.id).page(params[:page]).per(4)
+    @users = User.where(is_deleted: false).where.not(id: current_user.id).page(params[:page]).per(8)
   end
 
   def show
