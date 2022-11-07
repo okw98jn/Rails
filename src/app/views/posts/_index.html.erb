@@ -1,0 +1,61 @@
+<% provide(:title, "レシピ検索") %>
+<div class="container-fluid position-absolute z-2 pb-5">
+  <div class="user col-lg-9 mx-auto mt-5 p-5 post_form">
+    <h2 class='notification_title'>レシピ検索</h2>
+    <div class="posts_index_area">
+      <div class="search_area">
+        <%= form_with url: search_posts_path, method: :get, local: true, class: "search_container" do |f| %>
+          <%= f.text_field :keyword, placeholder: "料理名・食材を検索" %>
+          <%= button_tag type: "submit", class: "rspec_search_btn" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="search_btn_area">
+        <span class="search_btn comment_btn rspec_category_btn">カテゴリー</span>
+        <%= link_to post_favorite_rank_posts_path, class: "" do %>
+          <span class="search_btn">いいねが多い順</span>
+        <% end %>
+        <%= link_to post_comment_rank_posts_path do %>
+          <span class="search_btn">コメントが多い順</span>
+        <% end %>
+        <%= link_to posts_path do %>
+          <span class="search_btn">全ての投稿</span>
+        <% end %>
+      </div>
+      <div class="search_category_area is-open">
+        <% @categories.each do |category| %>
+          <%= link_to search_category_post_path(category.id) do %>
+            <span class="category_btn"><%= category.name %></span>
+          <% end %>
+        <% end %>
+      </div>
+      <p class="search_result"><%= @result %></p>
+      <% @posts.each do |post| %>
+        <%= link_to post_path(post) do %>
+          <div class="post_item">
+            <div class="post_left"><%= image_tag post.post_image.url %></div>
+            <div class="post_right">
+              <h2><%= post.title %></h2>
+              <span><i class="fa-solid fa-user icon_margin"></i><%= post.user.name %></span>
+              <span class="index_post_description"><%= post.description %></span>
+              <span>材料：</span>
+              <% post.materials.each do |material| %>
+                <span class="index_material"><%= material.material_name %></span>
+              <% end %>
+              <div class="category_time">
+                <span><%= post.category.name %></span>
+                <span><i class="fa-regular fa-clock icon_margin"></i><%= post.time %></span>
+              </div>
+              <div class="favorite_comment">
+                <span><i class="fa-regular fa-heart icon_margin"></i><%= post.favorites.count %></span>
+                <span><i class="fa-regular fa-comment icon_margin"></i><%= post.comments.count %></span>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= paginate @posts %>
+  </div>
+</div>

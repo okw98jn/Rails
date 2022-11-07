@@ -69,4 +69,10 @@ class Post < ApplicationRecord
     end
     notification.save if notification.valid?
   end
+
+  def self.search(search)
+    if search
+      Post.includes(:materials).where(['title LIKE ? OR material_name LIKE ? ', "%#{search}%", "%#{search}%"]).references(:materials)
+    end
+  end
 end

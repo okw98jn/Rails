@@ -1,62 +1,60 @@
-<div class="post_form mt-5">
-  <%= form_with model: @post , local: true do |f| %>
-    <%= render "shared/flash_error" %>
-    <div class = "post_field">
-      <%= f.label :title ,"料理名", class: "required" %>
-      <%= f.text_field :title, placeholder: "料理名を入力", class: "post_placeholder"%>
+<%= form_with model: @post , local: true do |f| %>
+  <%= render "shared/flash_error" %>
+  <div class = "post_field">
+    <%= f.label :title ,"料理名", class: "required" %>
+    <%= f.text_field :title, placeholder: "料理名を入力", class: "post_placeholder"%>
+  </div>
+  <div class="post_field">
+    <%= f.label :description ,"コメント" %>
+    <%= f.text_area :description, placeholder: "コメントを入力"%>
+  </div>
+  <div class="post_field">
+    <%= f.label :post_image ,"画像", class: "required mb-2" %>
+    <%= f.file_field :post_image, style: 'display:none;', id: :img_field %>
+    <% if @post.post_image.present? %>
+      <%= image_tag @post.post_image.url, id: :img_prev, onClick: "$('#img_field').click()" %>
+    <% else %>
+      <%= image_tag 'noimage.png', id: :img_prev, onClick: "$('#img_field').click()" %>
+    <% end %>
+  </div>
+  <div class="post_field time_select">
+    <%= f.label :time ,"調理時間" %>
+    <%= f.select :time,['5分以内', '10分', '20分', '30分', '40分', '50分', '1時間以上'] %>
+  </div>
+  <div class="post_field time_select">
+    <%= f.label :category_id ,"カテゴリ" %>
+    <%= f.collection_select(:category_id, @categories, :id, :name) %>
+  </div>
+  <div class="material_field">
+    <p class="post_border">材料</p>
+    <div class="material_select">
+      <%= f.select :number_of_persons,['1人前', '2人前', '3人前', '4人前', '5人前', '6人前', '7人前', '8人前'] %>
     </div>
-    <div class="post_field">
-      <%= f.label :description ,"コメント" %>
-      <%= f.text_area :description, placeholder: "コメントを入力"%>
-    </div>
-    <div class="post_field">
-      <%= f.label :post_image ,"画像", class: "required mb-2" %>
-      <%= f.file_field :post_image, style: 'display:none;', id: :img_field %>
-      <% if @post.post_image.present? %>
-        <%= image_tag @post.post_image.url, id: :img_prev, onClick: "$('#img_field').click()" %>
-      <% else %>
-        <%= image_tag 'noimage.png', id: :img_prev, onClick: "$('#img_field').click()" %>
-      <% end %>
-    </div>
-    <div class="post_field time_select">
-      <%= f.label :time ,"調理時間" %>
-      <%= f.select :time,['5分以内', '10分', '20分', '30分', '40分', '50分', '1時間以上'] %>
-    </div>
-    <div class="post_field time_select">
-      <%= f.label :category_id ,"カテゴリ" %>
-      <%= f.collection_select(:category_id, @categories, :id, :name) %>
-    </div>
-    <div class="material_field">
-      <p class="post_border">材料</p>
-      <div class="material_select">
-        <%= f.select :number_of_persons,['1人前', '2人前', '3人前', '4人前', '5人前', '6人前', '7人前', '8人前'] %>
-      </div>
-      <%= f.fields_for :materials, local: true do |t| %>
-        <%= render "material_fields", f: t %>
-      <% end %>
-      <div id="detail-association-insertion-point-material"></div>
-      <%= link_to_add_association "材料を追加", f, :materials,
-        class: 'add_btn',
-        data: {
-          association_insertion_node: '#detail-association-insertion-point-material',
-          association_insertion_method: 'append'
-        }
-      %>
-    </div>
-    <div class="procedure_field">
-      <p class="post_border">作り方</p>
-      <%= f.fields_for :procedures, local: true do |t| %>
-        <%= render "procedure_fields", f: t %>
-      <% end %>
-      <div id="detail-association-insertion-point-procedure"></div>
-      <%= link_to_add_association "手順を追加", f, :procedures,
-        class: 'add_btn',
-        data: {
-          association_insertion_node: '#detail-association-insertion-point-procedure',
-          association_insertion_method: 'append'
-        }
-      %>
-    </div>
-    <%= f.submit "完了する", class: "post_btn" %>
-  <% end %>
-</div>
+    <%= f.fields_for :materials, local: true do |t| %>
+      <%= render "material_fields", f: t %>
+    <% end %>
+    <div id="detail-association-insertion-point-material"></div>
+    <%= link_to_add_association "材料を追加", f, :materials,
+      class: 'add_btn',
+      data: {
+        association_insertion_node: '#detail-association-insertion-point-material',
+        association_insertion_method: 'append'
+      }
+    %>
+  </div>
+  <div class="procedure_field">
+    <p class="post_border">作り方</p>
+    <%= f.fields_for :procedures, local: true do |t| %>
+      <%= render "procedure_fields", f: t %>
+    <% end %>
+    <div id="detail-association-insertion-point-procedure"></div>
+    <%= link_to_add_association "手順を追加", f, :procedures,
+      class: 'add_btn',
+      data: {
+        association_insertion_node: '#detail-association-insertion-point-procedure',
+        association_insertion_method: 'append'
+      }
+    %>
+  </div>
+  <%= f.submit "完了する", class: "post_btn" %>
+<% end %>

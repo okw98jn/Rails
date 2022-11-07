@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_category, only: [:new, :create, :show, :edit, :update, :destroy]
+  before_action :set_category
   before_action :cannot_changed_other_user_post, only: [:edit, :update, :destroy]
 
   def new
@@ -22,6 +22,39 @@ class PostsController < ApplicationController
   end
 
   def index
+    @posts = Post.all.page(params[:page]).per(10)
+    @result = "全ての投稿"
+  end
+
+  def search
+    keyword = params[:keyword]
+    if keyword != ""
+      @posts = Post.search(keyword).page(params[:page]).per(10)
+      @result = "#{keyword}の検索結果(#{@posts.count}件)"
+    else
+      redirect_to posts_path
+    end
+  end
+
+  def search_category
+    category = Category.find(params[:id])
+    posts = category.posts
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
+    @result = "#{category.name}の検索結果(#{@posts.count}件)"
+  end
+
+  def post_favorite_rank
+    posts = Post.all
+    posts = posts.sort { |a, b| b.favorites.count <=> a.favorites.count }
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
+    @result = "いいねランキング"
+  end
+
+  def post_comment_rank
+    posts = Post.all
+    posts = posts.sort { |a, b| b.comments.count <=> a.comments.count }
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
+    @result = "コメントランキング"
   end
 
   def show

@@ -4,7 +4,7 @@
     <h2 class="mb-2 form_title post_title"><%= @post.title %></h2>
     <div class="post_user">
       <%= link_to user_path(@post.user) do %>
-        <i class="fa-solid fa-user"></i><span class="aaa"><%= @post.user.name %></span>
+        <i class="fa-solid fa-user"></i><span><%= @post.user.name %></span>
       <% end %>
     </div>
     <div class="post_date post_width">
