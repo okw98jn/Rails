@@ -32,14 +32,12 @@ class PostsController < ApplicationController
       @posts = Post.search(keyword).page(params[:page]).per(10)
       @result = "#{keyword}の検索結果(#{@posts.count}件)"
     else
-      @posts = Post.all.page(params[:page]).per(10)
-      @result = "全ての投稿"
+      redirect_to posts_path
     end
   end
 
   def search_category
     category = Category.find(params[:id])
-    # posts = Post.where(category_id: category.id)
     posts = category.posts
     @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
     @result = "#{category.name}の検索結果(#{@posts.count}件)"

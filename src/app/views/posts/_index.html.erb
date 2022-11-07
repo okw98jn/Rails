@@ -6,14 +6,14 @@
       <div class="search_area">
         <%= form_with url: search_posts_path, method: :get, local: true, class: "search_container" do |f| %>
           <%= f.text_field :keyword, placeholder: "料理名・食材を検索" %>
-          <%= button_tag type: "submit" do %>
+          <%= button_tag type: "submit", class: "rspec_search_btn" do %>
             <i class="fa-solid fa-magnifying-glass"></i>
           <% end %>
         <% end %>
       </div>
       <div class="search_btn_area">
-        <span class="search_btn comment_btn">カテゴリー</span>
-        <%= link_to post_favorite_rank_posts_path do %>
+        <span class="search_btn comment_btn rspec_category_btn">カテゴリー</span>
+        <%= link_to post_favorite_rank_posts_path, class: "" do %>
           <span class="search_btn">いいねが多い順</span>
         <% end %>
         <%= link_to post_comment_rank_posts_path do %>
@@ -24,11 +24,11 @@
         <% end %>
       </div>
       <div class="search_category_area is-open">
-      <% @categories.each do |category| %>
-        <%= link_to search_category_post_path(category.id) do %>
-          <span class="category_btn"><%= category.name %></span>
+        <% @categories.each do |category| %>
+          <%= link_to search_category_post_path(category.id) do %>
+            <span class="category_btn"><%= category.name %></span>
+          <% end %>
         <% end %>
-      <% end %>
       </div>
       <p class="search_result"><%= @result %></p>
       <% @posts.each do |post| %>

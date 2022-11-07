@@ -66,4 +66,74 @@ RSpec.describe "Posts", type: :request do
       end
     end
   end
+
+  describe "posts#index" do
+    context "ログイン済みユーザーの場合" do
+      it "正常にレスポンスを返すこと" do
+        sign_in user
+        get posts_path
+        expect(response).to be_successful
+      end
+    end
+
+    context "ログインしていないユーザーの場合" do
+      it "ログインページにリダイレクトされること" do
+        get search_posts_path
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe "posts#post_favorite_rank" do
+    context "ログイン済みユーザーの場合" do
+      it "正常にレスポンスを返すこと" do
+        sign_in user
+        get post_favorite_rank_posts_path
+        expect(response).to be_successful
+      end
+    end
+
+    context "ログインしていないユーザーの場合" do
+      it "ログインページにリダイレクトされること" do
+        get post_favorite_rank_posts_path
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe "posts#post_comment_rank" do
+    context "ログイン済みユーザーの場合" do
+      it "正常にレスポンスを返すこと" do
+        sign_in user
+        get post_comment_rank_posts_path
+        expect(response).to be_successful
+      end
+    end
+
+    context "ログインしていないユーザーの場合" do
+      it "ログインページにリダイレクトされること" do
+        get post_comment_rank_posts_path
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
+
+  describe "posts#post_comment_rank" do
+    let(:category) { FactoryBot.create(:category) }
+
+    context "ログイン済みユーザーの場合" do
+      it "正常にレスポンスを返すこと" do
+        sign_in user
+        get search_category_post_path(category)
+        expect(response).to be_successful
+      end
+    end
+
+    context "ログインしていないユーザーの場合" do
+      it "ログインページにリダイレクトされること" do
+        get search_category_post_path(category)
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
 end
