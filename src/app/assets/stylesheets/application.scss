@@ -36,8 +36,8 @@ li {
 
 /* ヘッダー */
 header {
-  padding: 15px 40px;
-  background-color: rgba(75, 75, 75, 0.355);
+  padding: 10px 40px;
+  background-color: rgba(161, 147, 131, 0.355);
 }
 .header_menu {
   display: flex;
@@ -45,25 +45,40 @@ header {
   align-items: center;
 }
 .app_name {
-  font-size: 30px;
-  color: rgb(255, 215, 152);
+  font-size: 24px;
+  color: rgba(109, 89, 57, 0.883);
   font-family: "Fredericka the Great", cursive;
   font-weight: bold;
   &:hover {
-    color: rgba(255, 216, 152, 0.828);
+    color: rgba(109, 89, 57, 0.883);
+    opacity: 0.8;
   }
 }
 .header_right {
   display: flex;
 }
 .menu_item {
-  margin-right: 50px;
+  text-align: center;
+  width: 85px;
   &:last-child {
     margin-right: 0;
   }
+  &:hover{
+    opacity: 0.8;
+  }
 }
 .icon_color {
-  color: rgb(255, 215, 152);
+  color: rgba(109, 89, 57, 0.883);
+}
+.icon_size{
+  height: 22px;
+}
+.menu_item_text{
+  margin-bottom: 0 !important;
+  font-size: 12px;
+  color: #53483d99;
+  font-weight: bold;
+  
 }
 
 /* ページネーション */
