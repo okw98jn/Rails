@@ -1,11 +1,11 @@
 /* 入力フォーム */
 .form_sub_title {
   font-size: 16px;
-  color: rgba(255, 166, 0, 0.8);
+  color: rgb(89,51,16);
   letter-spacing: 6px;
 }
 .form_title {
-  color: rgba(255, 166, 0, 0.8);
+  color: rgb(89,51,16);
   font-size: 32px;
   letter-spacing: 6px;
   font-weight: bold;
@@ -21,7 +21,7 @@
   border-radius: 10px;
   padding: 10px 15px;
   border: 1px solid rgba(255, 255, 255, 0.8);
-  background-color: rgba(255, 153, 0, 0.6);
+  background-color: rgba(89, 51, 16, 0.725);
   color: white;
   text-align: center;
   width: 50%;
@@ -30,13 +30,13 @@
   outline: 0;
   transition-duration: 0.4s;
   &:hover {
-    background-color: rgba(255, 153, 0, 0.9);
+    background-color: rgba(89, 51, 16, 0.725);
     cursor: pointer;
   }
   &:focus {
     background-color: white;
     width: 400px;
-    color: #ff731cc0;
+    color: rgba(89, 51, 16, 0.875);
   }
 }
 .input_field::placeholder {
@@ -46,13 +46,13 @@
 .form_btn {
   width: 25%;
   padding: 12px 16px;
-  border: 2px solid rgba(227, 148, 59, 0.741);
+  border: 2px solid rgba(89, 51, 16, 0.725);
   border-radius: 5px;
   background-color: transparent;
-  color: rgb(255, 166, 0);
+  color: rgba(89, 51, 16, 0.725);
   &:hover {
     transition: all 0.4s;
-    background-color: rgba(255, 161, 39, 0.582);
+    background-color: rgba(89, 51, 16, 0.725);
     color: rgb(255, 255, 255);
   }
 }
@@ -62,7 +62,7 @@
   display: block;
   margin-bottom: 5px;
   &:hover {
-    color: rgb(248, 180, 84);
+    color: rgba(89, 51, 16, 0.725);
     transition: all 0.8s;
     opacity: 0.7;
   }
@@ -87,7 +87,7 @@
   list-style: none;
   width: 20px;
   height: 20px;
-  background: rgba(255, 149, 0, 0.6);
+  background: rgba(89, 51, 16, 0.751);
   animation: animate 25s linear infinite;
   bottom: -150px;
 }
