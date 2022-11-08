@@ -73,7 +73,9 @@ RSpec.feature "Users", type: :system do
     context "ゲストユーザーとしてログインしようとした場合" do
       scenario "ログインできること" do
         visit new_user_session_path
-        click_link "ゲストログイン"
+        within '.guest_login_area' do
+          click_link "ゲストログイン"
+        end
         expect(page).to have_content "ゲストユーザーとしてログインしました。"
       end
     end

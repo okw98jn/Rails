@@ -15,7 +15,7 @@
     <div class="field">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "input_field" %>
     </div>
-    <div class="mb-4">
+    <div class="mb-4 guest_login_area">
       <%= f.submit "ログイン", class: "form_btn" %>
       <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "form_btn d-inline-block" %>
     </div>
