@@ -5,17 +5,17 @@
     <h2 class="mb-2 form_title">パスワード変更</h2>
     <h3 class="mb-4 form_sub_title">新しいパスワードを入力してください</h3>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <%= f.hidden_field :reset_password_token %>
-    <div class="field">
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "input_field" %>
-    </div>
-    <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "input_field" %>
-    </div>
-    <div class="flex mb-4">
-      <%= f.submit "変更する", class: "form_btn" %>
-    </div>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "input_field" %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "input_field" %>
+      </div>
+      <div class="flex mb-4">
+        <%= f.submit "変更する", class: "form_btn mx-auto" %>
+      </div>
     <% end %>
   </div>
 </div>
