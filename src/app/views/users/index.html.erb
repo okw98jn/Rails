@@ -1,6 +1,6 @@
 <% provide(:title, "ユーザー一覧") %>
-<div class="container-fluid position-absolute z-2">
-  <div class="user col-lg-8 mx-auto mt-5">
+<div class="container-fluid position-absolute z-2 pb-5">
+  <div class="user col-lg-8 mx-auto mt-5 post_form">
     <%= image_tag 'users_icon.png', class: "mb-3", size: '90' %>
     <h2 class="mb-4 form_title">ユーザー</h2>
     <% if @users.exists? %>
@@ -20,7 +20,6 @@
     <% else %>
       <p class="text_color">ユーザーはいません</p>
     <% end %>
+    <%= paginate @users %>
   </div>
-  <%= paginate @users %>
 </div>
-<%= render "shared/animated_background" %>
