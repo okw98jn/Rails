@@ -1,4 +1,59 @@
-<h1>仮のトップ画面</h1>
-<%= link_to "新規登録", new_user_registration_path %>
-<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-<i class="fab fa-twitter"></i>
+<div class="main_image">
+  <div class="top_app_name">
+    <h2>My Food Diary</h2>
+    <h3>#自炊日記をつけよう</h3>
+  </div>
+</div>
+<div class="top_description">
+  <p class="app_title">My Food Diary</p>
+  <p class="app_text">My Food Diaryは日々の自炊を簡単に管理し、楽しく続けるためのアプリです。</p>
+  <div class="card_area">
+    <div class="l-wrapper_02 card-radius_02">
+      <article class="card_02">
+        <div class="card__header_02">
+          <p class="card__title_02">レシピ作成</p>
+          <figure class="card__thumbnail_02">
+            <%= image_tag 'recipe_create', class: "card__image_02"%>
+          </figure>
+        </div>
+        <div class="card__body_02">
+          <p class="card__text2_02">手軽にレシピを記録できるように料理名と写真だけで投稿できます。他にも材料や作り方なども登録できます。一番映える写真で投稿するのをおすすめします。</p>
+        </div>    
+      </article>
+    </div>
+    <div class="l-wrapper_02 card-radius_02">
+      <article class="card_02">
+        <div class="card__header_02">
+          <p class="card__title_02">レシピ確認</p>
+          <figure class="card__thumbnail_02">
+            <%= image_tag 'recipe_show', class: "card__image_02"%>
+          </figure>
+        </div>
+        <div class="card__body_02">
+          <p class="card__text2_02">作り方を忘れた時など過去に投稿したレシピを確認できます。編集ができるので、より美味しくできた時はレシピを進化させましょう。</p>
+        </div>    
+      </article>
+    </div>
+    <div class="l-wrapper_02 card-radius_02">
+      <article class="card_02">
+        <div class="card__header_02">
+          <p class="card__title_02">レシピ検索</p>
+          <figure class="card__thumbnail_02">
+            <%= image_tag 'recipe_search', class: "card__image_02"%>
+          </figure>
+        </div>
+        <div class="card__body_02">
+          <p class="card__text2_02">献立を考えるのが面倒くさい時は他のユーザーのレシピを参考にしましょう。料理名の他にカテゴリでの検索など作りたいレシピが見つかるはずです。</p>
+        </div>    
+      </article>
+    </div>
+  </div>
+  <% unless user_signed_in? %>
+    <div class="button018">
+      <%= link_to new_user_registration_path do%>
+        <span>はじめる</span>
+      <% end %>
+    </div>
+  <% end %>  
+</div>
+
