@@ -42,7 +42,7 @@
 - ページネーション機能(kaminari)
 
 ## ER図
-
+![ER](https://user-images.githubusercontent.com/104005833/201480042-8db42132-6e6e-4192-a798-162838afa972.png)
 ## 苦労した点
 インフラ周りでのエラーにかなり苦戦しました。  
 CircleCiでのRspec実行時にChromeをインストール出来なかったり、node.jsのバージョン違いでデプロイ出来ない等、他にもありましたが特にこの2点は時間がかかりました。  
