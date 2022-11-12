@@ -7,4 +7,5 @@
 ・Docker/Docker-compose   
 ・CircleCi    
 ・RSpec   
+・AWS S3(画像アップロード）  
 ・Heroku
