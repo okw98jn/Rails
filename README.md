@@ -45,6 +45,8 @@
 - ページネーション機能(kaminari)
 
 ## 使用イメージ
+![screencapture-myfood-diary-herokuapp-users-114-2022-11-13-00_43_03](https://user-images.githubusercontent.com/104005833/201482133-34cbb176-5d76-4d81-9aec-7c33e47ed335.png)
+
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/104005833/201480042-8db42132-6e6e-4192-a798-162838afa972.png)
