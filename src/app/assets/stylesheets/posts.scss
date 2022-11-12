@@ -4,6 +4,7 @@
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 8px rgb(158, 158, 158);
+  margin-bottom: 80px;
 }
 .post_field {
   margin: 0 auto;
@@ -344,7 +345,8 @@
 }
 .post_show_image {
   img {
-    width: 70%;
+    width: 80%;
+    height: 450px;
     object-fit: cover;
     margin-bottom: 20px;
     box-shadow: 0 7px 34px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
@@ -551,7 +553,8 @@
   margin-right: 20px;
   img {
     display: block;
-    height: 170px;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
     box-shadow: 0 7px 34px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     border-radius: 15px;
