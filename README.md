@@ -45,13 +45,23 @@
 - ページネーション機能(kaminari)
 
 ## 使用イメージ
+ログインページ  
+![スクリーンショット 2022-11-13 1 16 16](https://user-images.githubusercontent.com/104005833/201483656-0d5ef7d0-f4bc-4a60-922d-c3d1904c4155.png)  
+
 マイページ  
-![screencapture-myfood-diary-herokuapp-users-114-2022-11-13-00_51_40](https://user-images.githubusercontent.com/104005833/201482619-11638730-712c-4874-8b78-79c07b61a290.png)  
+![screencapture-myfood-diary-herokuapp-users-114-2022-11-13-01_09_34](https://user-images.githubusercontent.com/104005833/201483315-a5fd4d63-723e-4f3e-8c77-8a1313cc92f9.png)  
+
 レシピ作成  
-![screencapture-myfood-diary-herokuapp-posts-new-2022-11-13-01_00_34](https://user-images.githubusercontent.com/104005833/201482962-bba2dffd-36c7-4a16-b8db-289a5e6e5808.png)
+![screencapture-myfood-diary-herokuapp-posts-new-2022-11-13-01_00_34](https://user-images.githubusercontent.com/104005833/201482962-bba2dffd-36c7-4a16-b8db-289a5e6e5808.png)  
 
+レシピ詳細ページ  
+![screencapture-myfood-diary-herokuapp-posts-24-2022-11-13-01_14_06](https://user-images.githubusercontent.com/104005833/201483541-859b6b3d-3fab-448a-bb86-2a31236c2a95.png)  
 
+検索画面  
+![screencapture-myfood-diary-herokuapp-posts-4-search-category-2022-11-13-01_05_42](https://user-images.githubusercontent.com/104005833/201483131-78cfdd06-9caa-47b0-b2ad-e59500f2749a.png)  
 
+通知画面  
+![screencapture-myfood-diary-herokuapp-notifications-2022-11-13-01_11_05](https://user-images.githubusercontent.com/104005833/201483381-26987c00-6921-4e38-9180-ba5360520d29.png)  
 
 ## ER図
 ![ER](https://user-images.githubusercontent.com/104005833/201480042-8db42132-6e6e-4192-a798-162838afa972.png)
