@@ -46,7 +46,10 @@
 
 ## 使用イメージ
 マイページ  
-![screencapture-myfood-diary-herokuapp-users-114-2022-11-13-00_51_40](https://user-images.githubusercontent.com/104005833/201482619-11638730-712c-4874-8b78-79c07b61a290.png)
+![screencapture-myfood-diary-herokuapp-users-114-2022-11-13-00_51_40](https://user-images.githubusercontent.com/104005833/201482619-11638730-712c-4874-8b78-79c07b61a290.png)  
+レシピ作成  
+![screencapture-myfood-diary-herokuapp-posts-new-2022-11-13-01_00_34](https://user-images.githubusercontent.com/104005833/201482962-bba2dffd-36c7-4a16-b8db-289a5e6e5808.png)
+
 
 
 
