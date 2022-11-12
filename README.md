@@ -1,7 +1,8 @@
 # My-Food-Diary
 日々の自炊を簡単に管理し、楽しく自炊を続けるためのアプリです。  
 [https://myfood-diary.herokuapp.com/](https://myfood-diary.herokuapp.com/)  
-![screencapture-myfood-diary-herokuapp-2022-11-13-00_20_13](https://user-images.githubusercontent.com/104005833/201481097-7dc37f66-aa87-4ae5-b15b-0ec60fa6f8ee.png)
+![screencapture-myfood-diary-herokuapp-2022-11-13-00_20_13](https://user-images.githubusercontent.com/104005833/201481383-32e2395d-8bea-42e4-9c2f-2af2d2759909.png)
+
 
 ## 制作した理由
 - 毎日自炊をしていると飽きがきたりマンネリ化してしまう。  
