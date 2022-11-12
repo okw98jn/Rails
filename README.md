@@ -43,6 +43,8 @@
   - レシピ投稿時
 - ページネーション機能(kaminari)
 
+## 使用イメージ
+
 ## ER図
 ![ER](https://user-images.githubusercontent.com/104005833/201480042-8db42132-6e6e-4192-a798-162838afa972.png)
 
