@@ -46,6 +46,7 @@
 
 ## Rspec
 ModelSpec  
+![model](https://user-images.githubusercontent.com/104005833/201480563-0879f5d9-af1a-44df-ab35-071b521c9120.png)
 
 SystemSpec  
 ![system](https://user-images.githubusercontent.com/104005833/201480388-6ee703a4-287f-464b-8614-aaef57ef29e7.png)
