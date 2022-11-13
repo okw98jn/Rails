@@ -24,3 +24,4 @@ import "./post_tab";
 import "./preview";
 import "./flash_fadeout";
 import "./comment_form";
+import "./hamburger";

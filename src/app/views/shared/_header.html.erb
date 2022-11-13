@@ -5,66 +5,7 @@
         My Food Diary
       <% end %>
     </div>
-    <div class="header_right">
-      <% if user_signed_in? %>
-        <div class="menu_item">
-          <%= link_to posts_path do%>
-            <i class="fa-solid fa-magnifying-glass icon_color icon_size"></i>
-            <p class="menu_item_text">検索</p>
-          <% end %>
-        </div>
-        <div class="menu_item circle_position">
-          <%= link_to notifications_path do%>
-            <% if unchecked_notifications.any? %>
-              <div class='n_circle'>
-                <p><%= unchecked_notifications.count %></p>
-              </div>
-              <i class="fa-solid fa-bell icon_color icon_size"></i>
-              <p class="menu_item_text">通知</p>
-            <% else %>
-              <i class="fa-solid fa-bell icon_color icon_size"></i>
-              <p class="menu_item_text">お知らせ</p>
-            <% end %>
-          <% end %>
-        </div>
-        <div class="menu_item">
-          <%= link_to users_path do%>
-            <i class="fa-solid fa-users icon_color icon_size"></i>
-            <p class="menu_item_text">ユーザー</p>
-          <% end %>
-        </div>
-        <div class="menu_item">
-          <%= link_to user_path(current_user.id) do%>
-            <i class="fa-solid fa-user icon_color icon_size"></i>
-            <p class="menu_item_text">マイページ</p>
-          <% end %>
-        </div>
-        <div class="menu_item">
-          <%= link_to destroy_user_session_path, method: :delete do%>
-            <i class="fa-solid fa-right-to-bracket icon_color icon_size"></i>
-            <p class="menu_item_text">ログアウト</p>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="menu_item">
-          <%= link_to new_user_session_path do%>
-            <i class="fa-solid fa-right-to-bracket icon_color icon_size"></i>
-            <p class="menu_item_text">ログイン</p>
-          <% end %>
-        </div>
-        <div class="menu_item">
-          <%= link_to new_user_registration_path do%>
-            <i class="fa-solid fa-user-plus icon_color icon_size"></i>
-            <p class="menu_item_text">新規登録</p>
-          <% end %>
-        </div>
-        <div class="menu_item">
-          <%= link_to users_guest_sign_in_path, method: :post do%>
-            <i class="fa-solid fa-person-walking-arrow-right icon_color icon_size"></i>
-            <p class="menu_item_text">ゲストログイン</p>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+    <%= render "shared/pc_header" %>
+    <%= render "shared/smartphone_header" %>
   </div>
 </header>
