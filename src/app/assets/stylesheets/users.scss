@@ -1,11 +1,11 @@
 /* 入力フォーム */
 .form_sub_title {
   font-size: 16px;
-  color: rgb(89,51,16);
+  color: rgb(89, 51, 16);
   letter-spacing: 6px;
 }
 .form_title {
-  color: rgb(89,51,16);
+  color: rgb(89, 51, 16);
   font-size: 32px;
   letter-spacing: 6px;
   font-weight: bold;
@@ -188,7 +188,7 @@
   &:hover {
     cursor: pointer;
     opacity: 0.8;
-    }
+  }
 }
 .user_name {
   font-size: 16px;
@@ -247,7 +247,7 @@
 }
 .unsubscribe_link {
   color: gray;
-  &:hover{
+  &:hover {
     color: gray;
     opacity: 0.8;
   }
@@ -299,4 +299,30 @@
 /* フォロー関係 */
 .text_color {
   color: rgb(109, 109, 109);
+}
+
+/* レスポンシブ */
+
+/* ログイン画面 */
+@media screen and (max-width: 500px) {
+  .circles {
+    height: 100%;
+  }
+  .input_field {
+    width: 100%;
+  }
+  .sign_up_link {
+    font-size: 14px;
+  }
+  .form_btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  /* マイページ */
+  
+  /* 退会画面 */
+  .withdrawal_text{
+    font-size: 14px;
+    text-align: left;
+  }
 }
