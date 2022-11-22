@@ -1,6 +1,6 @@
 <% provide(:title, "お知らせ") %>
 <div class="container-fluid z-2 pb-5">
-  <div class="user col-lg-9 mx-auto mt-5 p-5 post_form">
+  <div class="user col-lg-9 mx-auto mt-5 post_form notification_area">
     <h2 class='notification_title'>お知らせ</h2>
     <div class="notification_delete">
       <%= link_to notification_path(@notifications), method: :delete, data: { confirm: "通知を削除しますか？" }, class: "delete_icon comment_delete_icon" do %>

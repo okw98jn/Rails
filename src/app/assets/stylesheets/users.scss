@@ -310,6 +310,9 @@
   }
   .input_field {
     width: 100%;
+    &:focus{
+      width: 100%;
+    }
   }
   .sign_up_link {
     font-size: 14px;

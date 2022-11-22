@@ -227,3 +227,11 @@
     display: none;
   }
 }
+
+/* レスポンシブ */
+@media screen and (max-width: 500px) {
+  .main_image {
+    background-image: image-url("responsive_top_image.jpg");
+    height: 700px;
+  }
+}

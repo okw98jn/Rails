@@ -85,3 +85,19 @@
   position: relative;
 }
 
+/* レスポンシブ */
+@media screen and (max-width: 500px) {
+  .notification_area {
+    width: 100%;
+  }
+  .notification_view {
+    font-size: 13px;
+    padding: 20px;
+    max-width: 100%;
+    img {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 5px;
+    }
+  }
+}

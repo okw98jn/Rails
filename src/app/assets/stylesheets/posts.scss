@@ -414,6 +414,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
   img {
     height: 120px;
     object-fit: cover;
@@ -433,6 +434,7 @@
   color: white;
   border-radius: 5px;
 }
+
 /* コメント部分 */
 .comment_btn {
   padding: 10px 20px;
@@ -666,8 +668,22 @@
 }
 
 /* レスポンシブ */
+
 /* マイページのタブメニュー */
 @media screen and (max-width: 500px) {
+  /* ページ全体 */
+  .container-fluid {
+    background-color: white !important;
+    min-height: 100vh;
+  }
+  .post_form {
+    max-width: 100%;
+    padding: 30px 10px;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+  /* マイページ */
   .post_photo {
     width: 100%;
     height: 360px;
@@ -675,8 +691,43 @@
     img {
       height: 240px;
     }
+    &:hover {
+      transform: none;
+      box-shadow: 0 2px 5px #ccc;
+      transition: none;
+    }
   }
-
+  /* レシピ作成 */
+  .post_field {
+    width: 90%;
+  }
+  .material_field {
+    width: 90%;
+  }
+  .procedure_field {
+    width: 90%;
+  }
+  .process_image {
+    font-size: 13px;
+    width: 100%;
+    &::before {
+      content: "画像  :  ";
+    }
+  }
+  .material_select {
+    select,
+    option {
+      margin-bottom: 15px;
+    }
+  }
+  .responsive_material {
+    input {
+      width: 50%;
+    }
+  }
+  .post_btn {
+    width: 40%;
+  }
   /* レシピ詳細 */
   .post_show_image {
     img {
@@ -709,4 +760,18 @@
   .post_date {
     font-size: 14px;
   }
+  .post_menu{
+    margin-bottom: 20px;
+  }
+  .procedure_item {
+  text-align: left !important;
+  font-size: 16px;
+  display: block;
+  img {
+    height: 120px;
+    width: 200px;
+    margin-top: 10px;
+    padding-left: 30px;
+  }
+}
 }
