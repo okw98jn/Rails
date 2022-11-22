@@ -295,7 +295,7 @@
 /* レシピ詳細ページ */
 .post_title {
   color: rgb(89, 51, 9) !important;
-  font-size: 30px !important;
+  font-size: 30px;
   font-weight: 900 !important;
   padding-bottom: 5px;
   border-bottom: 3px solid rgb(194, 182, 170);
@@ -740,6 +740,9 @@
       height: 450px;
       margin-bottom: 20px;
     }
+  }
+  .post_title {
+    font-size: 25px !important;
   }
   .post_description {
     width: 100%;

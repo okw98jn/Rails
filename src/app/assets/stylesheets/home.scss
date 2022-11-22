@@ -175,6 +175,8 @@
   .main_image {
     background-image: image-url("responsive_top_image.jpg");
     height: 800px;
+    background-size: cover;
+    background-attachment: fixed;
   }
   .top_description {
     height: 900px;
