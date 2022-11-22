@@ -173,9 +173,8 @@
     }
   }
   .main_image {
-    width: 100%;
-    height: 550px;
-    background-position: 30% 30%;
+    background-image: image-url("responsive_top_image.jpg");
+    height: 800px;
   }
   .top_description {
     height: 900px;
@@ -200,13 +199,18 @@
     margin-bottom: 40px;
   }
   .card__title_02 {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 80%;
     font-size: 16px;
   }
   .card__text2_02 {
+    padding-bottom: 20px;
     font-size: 12px;
   }
   .card__image_02 {
     padding-left: 40px;
+    display: none;
   }
   .button018 {
     padding-bottom: 50px;
@@ -225,13 +229,5 @@
   .button018 a:before,
   .button018 a:after {
     display: none;
-  }
-}
-
-/* レスポンシブ */
-@media screen and (max-width: 500px) {
-  .main_image {
-    background-image: image-url("responsive_top_image.jpg");
-    height: 700px;
   }
 }

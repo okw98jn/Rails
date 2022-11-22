@@ -414,7 +414,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   img {
     height: 120px;
     object-fit: cover;
@@ -728,6 +728,11 @@
   .post_btn {
     width: 40%;
   }
+  .add_btn {
+    &:hover {
+      opacity: 1;
+    }
+  }
   /* レシピ詳細 */
   .post_show_image {
     img {
@@ -760,18 +765,60 @@
   .post_date {
     font-size: 14px;
   }
-  .post_menu{
+  .post_menu {
     margin-bottom: 20px;
   }
   .procedure_item {
-  text-align: left !important;
-  font-size: 16px;
-  display: block;
-  img {
-    height: 120px;
-    width: 200px;
-    margin-top: 10px;
-    padding-left: 30px;
+    text-align: left !important;
+    font-size: 16px;
+    display: block;
+    img {
+      height: 120px;
+      width: 200px;
+      margin-top: 10px;
+      padding-left: 30px;
+    }
   }
-}
+  /* 検索画面 */
+  .posts_index_area {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .post_item {
+    padding-top: 20px;
+    margin-bottom: 30px;
+    display: block;
+    box-shadow: 0 7px 34px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    &:hover {
+      transform: none;
+      box-shadow: 0 7px 34px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+      transition: none;
+    }
+  }
+  .post_left {
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  .search_btn_area {
+    padding-left: 10px;
+  }
+  .search_btn {
+    text-align: center;
+    display: inline-block;
+    width: 45%;
+    margin-bottom: 15px;
+    margin-right: 10px;
+  }
+  .search_category_area {
+    padding-left: 10px;
+  }
+  .category_btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
