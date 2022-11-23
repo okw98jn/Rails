@@ -173,10 +173,11 @@
     }
   }
   .main_image {
-    background-image: image-url("responsive_top_image.jpg") 0 0 no-repeat;
+    background-image: image-url("responsive_top_image.jpg");
     width: 100%;
     height: 800px;
     background-position: contain;
+    background-attachment: local;
   }
   .top_description {
     height: 900px;
