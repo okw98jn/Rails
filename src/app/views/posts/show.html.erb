@@ -1,6 +1,6 @@
 <% provide(:title, "レシピ") %>
-<div class="container-fluid z-2 pb-5 aa">
-  <div class="user col-lg-9 mx-auto mt-5 p-5 post_form">
+<div class="container-fluid z-2 pb-5">
+  <div class="user col-lg-9 mx-auto mt-5 post_form">
     <h2 class="mb-2 form_title post_title"><%= @post.title %></h2>
     <div class="post_user">
       <%= link_to user_path(@post.user) do %>

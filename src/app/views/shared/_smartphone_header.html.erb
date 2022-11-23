@@ -1,0 +1,22 @@
+<div class='phone_header'>
+  <nav class="header__nav nav" id="js-nav">
+    <ul class="nav__items nav-items">
+      <% if user_signed_in? %>
+        <li class="nav-items__item"><%= link_to "検索", posts_path %></li>
+        <li class="nav-items__item"><%= link_to "お知らせ", notifications_path %></li>
+        <li class="nav-items__item"><%= link_to "ユーザー", users_path %></li>
+        <li class="nav-items__item"><%= link_to "マイページ", user_path(current_user.id) %></li>
+        <li class="nav-items__item"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li class="nav-items__item"><%= link_to "ログイン", new_user_session_path %></li>
+        <li class="nav-items__item"><%= link_to "新規登録", new_user_registration_path %></li>
+        <li class="nav-items__item"><%= link_to "ゲストログイン", users_guest_sign_in_path, method: :post %></li>
+      <% end %>
+    </ul>
+  </nav>
+  <div class="hamburger" id="js-hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
